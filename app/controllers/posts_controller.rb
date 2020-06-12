@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
-  
+
   def index
     @posts = Post.all.order("created_at DESC")
   end
@@ -37,7 +37,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:content, :image)
+    params.require(:post).permit(:content, :image).merge(user_id: current_user.id)
   end
 
   def move_to_index
