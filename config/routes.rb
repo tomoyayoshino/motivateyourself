@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   devise_for :users
   root 'posts#index'
   get '/about', to:'staticpages#about'
-  resources :posts
+  resources :posts do
+    resources :comments, only: :create
+  end
   resources :users, only: :show
 end
 
