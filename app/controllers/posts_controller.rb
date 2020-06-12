@@ -1,10 +1,10 @@
 class PostsController < ApplicationController
   def index
     @posts = Post.all.order("created_at DESC")
-    @post = Post.new
   end
-
+  
   def new
+    @post = Post.new
   end
 
   def create
@@ -26,6 +26,10 @@ class PostsController < ApplicationController
     post = Post.find(params[:id])
     post.update(post_params)
     redirect_to root_path
+  end
+
+  def show
+    @post = Post.find(params[:id])
   end
 
   private

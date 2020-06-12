@@ -2,120 +2,90 @@
   box-sizing: border-box;
 }
 
-// @mixin Logo {
-//   padding: 0 5px;
-//   text-decoration: none;
-//   color: white;
-// }
-
-// .Header {
-//   width: 100vw;
-//   height: 40px;
-//   line-height: 40px;
-//   background-color: lightblue;
-//   display: flex;
-//   justify-content: space-between;
-//   &__left {
-//     a{
-//       @include Logo;
-//       font-weight: bold;
-//       font-size: 30px;
-//     }
-//   }
-//   &__right {
-//     display: flex;
-//     margin-right: 10px;
-//     a{
-//       @include Logo;
-//     }
-//   }
-// }
-
 .wrapper {
   display: flex;
 }
 
 @mixin timeline_size {
-  width: 25vw;
   height: 100vh;
+  width: calc((100vw - 100px) / 4);
+}
+
+.Search{
+  @include timeline_size;
+  background-color: lightgrey;
 }
 
 .SideBar {
-  // background-color: pink;
-  @include timeline_size;
-  .SearchForm {
-    background-color: gray;
-    padding: 10px;
-    display: flex;
-    height: 60px;
-    line-height: 60px;
-    &__input {
-      width: 25vw;
-      height: 40px;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: lightgrey;
+  height: 100vh;
+}
+
+.PostBox {
+  background-color: lightgray;
+  border: 1px solid black;
+  height: 500px;
+  width: 100%;
+  padding: 0 5px;
+  .UserInfo {
+    &--image {
     }
-    &__btn {
-      height: 40px;
+    &__nameBox {
+      display: flex;
+      font-size: 20px;
+      &--name {
+        margin-right: 5px;
+      }
+      &--id {
+      }
     }
   }
-  .PostBox {
-    background-color: lightgray;
-    border: 1px solid black;
-    height: 500px;
-    width: 25vw;
-    padding: 0 5px;
-    .UserInfo {
-      &--image {
+  .PostForm {
+    height: 100%;
+    &__textarea{
+      height: 300px;
+      width: 100%;
+      font-size: 20px;
+      border-style: none;
+    }
+    &__buttons{
+      display: flex;
+      justify-content: flex-end;
+      &__image{
+        cursor: pointer;
+        margin-right: 15px;
+        .imageIcon{
+          font-size: 40px;
+        }
+        .Hidden{}
+        input {
+          display: none;
+        }
       }
-      &__nameBox {
-        display: flex;
-        font-size: 20px;
-        &--name {
-          margin-right: 5px;
-        }
-        &--id {
-        }
+      .tagIcon{
+        cursor: pointer;
+        font-size: 34px;
       }
     }
-    .PostForm {
-      height: 100%;
-      &__textarea{
-        height: 200px;
-        width: 100%;
-        font-size: 20px;
-      }
-      &__buttons{
-        display: flex;
-        justify-content: flex-end;
-        &__image{
-          cursor: pointer;
-          margin-right: 15px;
-          .imageIcon{
-            font-size: 40px;
-          }
-          .Hidden{}
-          input {
-            display: none;
-          }
-        }
-        .tagIcon{
-          cursor: pointer;
-          font-size: 34px;
-        }
-      }
-      &__submit{
-        cursor: pointer;
-        margin-left: 30px;
-        font-size: 30px;
-        padding: 0 10px;
-      }
+    &__submit{
+      cursor: pointer;
+      margin-left: 30px;
+      font-size: 30px;
+      padding: 0 10px;
     }
   }
 }
+
 
 .Timeline {
   padding: 1px 5px;
   @include timeline_size;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-wrap: break-word;
   &__header {
     outline: 1px solid black;
     background-color: #52b03b;
@@ -137,6 +107,7 @@
   }
   &__main {
     .ContentBox{
+      margin-top: 5px;
       outline: 1px solid black;
       &__info{
         display: flex;
@@ -147,13 +118,25 @@
         }
       }
       &__contents{
+        margin-bottom: 5px;
         &--text {
+          padding: 5px;
           outline: 1px solid lightgray;
-          height: 200px;
+          min-height: 50px;
           width: 100%;
+          p{
+            white-space: pre-wrap;
+          }
+        }
+        img {
+          height: 200px;
+          // width: 200px;
         }
       }
-      &__actionBar{}
+      &__actionBar{
+        display: flex;
+        justify-content: space-around;
+      }
     }
   }
 }
@@ -166,4 +149,37 @@
 .FavoriteTimeline {
   background-color: lightcoral;
   @include timeline_size;
+}
+
+.ContentShow{
+  padding: 20px;
+  .ContentBox{
+    outline: 1px solid black;
+    width: 70vw;
+    max-height: 100vh;
+    &__info{
+      display: flex;
+      justify-content: space-between;
+      height: 50px;
+      &--date{
+        font-size: 12px;
+      }
+    }
+    &__contents{
+      &--text {
+        min-height: 100px;
+        outline: 1px solid lightgray;
+        width: 100%;
+        font-size: 20px;
+      }
+      img {
+        height: 400px;
+      }
+    }
+    &__actionBar{
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+  }
 }
