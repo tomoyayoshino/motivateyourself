@@ -16,15 +16,6 @@
   background-color: lightgrey;
 }
 
-.SideBar {
-  width: 100px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  background-color: lightgrey;
-  height: 100vh;
-}
-
 .PostBox {
   background-color: lightgray;
   border: 1px solid black;
@@ -44,47 +35,49 @@
       }
     }
   }
-  .PostForm {
-    height: 100%;
-    &__textarea{
-      height: 300px;
-      width: 100%;
-      font-size: 20px;
-      border-style: none;
-    }
-    &__buttons{
-      display: flex;
-      justify-content: flex-end;
-      &__image{
-        cursor: pointer;
-        margin-right: 15px;
-        .imageIcon{
-          font-size: 40px;
-        }
-        .Hidden{}
-        input {
-          display: none;
-        }
-      }
-      .tagIcon{
-        cursor: pointer;
-        font-size: 34px;
-      }
-    }
-    &__submit{
+}
+
+.PostForm {
+  height: 100%;
+  &__textarea{
+    height: 300px;
+    width: 100%;
+    font-size: 20px;
+    border-style: none;
+  }
+  &__buttons{
+    display: flex;
+    justify-content: flex-end;
+    &__image{
       cursor: pointer;
-      margin-left: 30px;
-      font-size: 30px;
-      padding: 0 10px;
+      margin-right: 15px;
+      .imageIcon{
+        font-size: 40px;
+      }
+      .Hidden{}
+      input {
+        display: none;
+      }
+    }
+    .tagIcon{
+      cursor: pointer;
+      font-size: 34px;
     }
   }
+  &__submit{
+    cursor: pointer;
+    margin-left: 30px;
+    font-size: 30px;
+    padding: 0 10px;
+  }
 }
+
 
 
 .Timeline {
   padding: 1px 5px;
   @include timeline_size;
-  overflow-y: scroll;
+  // overflow-y: scroll;
   overflow-wrap: break-word;
   &__header {
     outline: 1px solid black;
@@ -106,9 +99,11 @@
     }
   }
   &__main {
+    height: calc(100vh - 50px);
+    overflow: scroll;
     .ContentBox{
       margin-top: 5px;
-      outline: 1px solid black;
+      border: 2px solid black;
       &__info{
         display: flex;
         justify-content: space-between;
@@ -121,7 +116,8 @@
         margin-bottom: 5px;
         &--text {
           padding: 5px;
-          outline: 1px solid lightgray;
+          border-top: 1px solid lightgray;
+          border-bottom: 1px solid lightgray;
           min-height: 50px;
           width: 100%;
           p{

@@ -1,0 +1,29 @@
+.UserShow {
+  padding: 5px;
+  height: 100vh;
+  width: calc(100vw - 100px);
+  .Profile {
+    background-color: lightgreen;
+  }
+  .Posts {
+    height: calc(100vh - 24px);
+    overflow: scroll;
+    &__contents {
+      border: 1px solid black;
+      margin-bottom: 5px;
+    }
+  }
+}
+
+
+// .UserShow
+//   .Profile
+//     .Profile__image
+//     .Profile__name
+//       %p.userName="#{@name}さんの投稿一覧"
+//   .Posts
+//     .Posts__contents
+//     - @posts.each do |post|
+//       %p.Posts__contents--text= post.content
+//       - if post.image?
+//         = image_tag post.image.url, height: '200', class: 'Posts__contents--image'

@@ -1,0 +1,11 @@
+.UserShow
+  .Profile
+    .Profile__image
+    .Profile__name
+      %p.userName="#{@name}さんの投稿一覧"
+  .Posts
+    - @posts.each do |post|
+      .Posts__contents
+        %p.Posts__contents--text= post.content
+        - if post.image?
+          = image_tag post.image.url, height: '200', class: 'Posts__contents--image'

@@ -3,7 +3,7 @@
     .UserInfo--image
     .UserInfo__nameBox
       .UserInfo__nameBox--name
-        ヨシノ
+        = current_user.name
       .UserInfo__nameBox--id
         @yoshitomo
   = form_with(model: @post, local: true, class: "PostForm") do |f|

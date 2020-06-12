@@ -1,4 +1,10 @@
 @import "reset";
+@import "modules/sidebar";
 @import "modules/posts";
+@import "modules/users";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+
+body{
+  display: flex;
+}
