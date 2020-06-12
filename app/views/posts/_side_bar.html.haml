@@ -1,8 +1,9 @@
 .SideBar
   画像置く
-  = link_to '投稿', new_post_path, class:".SideBar__new"
-  = link_to 'about', '#', class:".SideBar__list"
-  = link_to 'home', root_path, class:".SideBar__list"
+  = link_to 'Profile', '#', class:".SideBar__list"
+  = link_to 'Post', new_post_path, class:".SideBar__new"
+  = link_to 'Home', root_path, class:".SideBar__list"
+  = link_to 'About', '#', class:".SideBar__list"
   -# = form_with(url: '#', local: true, method: :get, class: "SearchForm") do |f|
   -#   = f.text_field :keyword, placeholder: "投稿を検索する", class: "SearchForm__input"
   -#   = f.submit "検索", class: "SearchForm__btn"
