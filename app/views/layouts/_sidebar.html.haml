@@ -2,10 +2,10 @@
   - if user_signed_in?
     画像置く
     = link_to 'Profile', "/users/#{current_user.id}", class:".SideBar__list"
-    = link_to 'Post', new_post_path, class:".SideBar__new"
+    = link_to 'Post', new_post_path, class:".SideBar__list"
     = link_to 'Logout', destroy_user_session_path, method: :delete
   - else 
-    ログイン
-    新規登録
+    = link_to 'ログイン', new_user_session_path, class:".SideBar__list"
+    = link_to '新規登録', new_user_registration_path, class:".SideBar__list"
   = link_to 'Home', root_path, class:".SideBar__list"
   = link_to 'About', '#', class:".SideBar__list"

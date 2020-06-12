@@ -1,23 +1,21 @@
-.wrapper
-  = render "side_bar"
-  .ContentShow
-    .ContentBox
-      .ContentBox__info
-        .ContentBox__info--image
-          画像
-        .ContentBox__info__user
-          .ContentBox__info__user--userName
-            ヨシノ
-          .ContentBox__info__user--userId
-            @yoshitomo
-        .ContentBox__info--date
-          2020/06/30
-      .ContentBox__contents
-        .ContentBox__contents--text
-          %span= @post.content
-        = image_tag @post.image.url, class: '.ContentBox__contents--image' if @post.image.present?
-      .ContentBox__actionBar
-        %i.fas.fa-comment
-        %i.fas.fa-star
-        = link_to '編集', edit_post_path(@post.id), method: :get
-        = link_to '削除', post_path(@post.id), method: :delete
+.ContentShow
+  .ContentBox
+    .ContentBox__info
+      .ContentBox__info--image
+        画像
+      .ContentBox__info__user
+        .ContentBox__info__user--userName
+          =@post.user.name
+        .ContentBox__info__user--userId
+          useid
+      .ContentBox__info--date
+        2020/06/30
+    .ContentBox__contents
+      .ContentBox__contents--text
+        %span= @post.content
+      = image_tag @post.image.url, class: '.ContentBox__contents--image' if @post.image.present?
+    .ContentBox__actionBar
+      %i.fas.fa-comment
+      %i.fas.fa-star
+      = link_to '編集', edit_post_path(@post.id), method: :get
+      = link_to '削除', post_path(@post.id), method: :delete
