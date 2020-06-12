@@ -1,0 +1,8 @@
+= form_with(model: @post, local: true, class: "PostForm") do |f|
+  = f.text_area :content, placeholder: "type a text", class: "PostForm__textarea"
+  .PostForm__buttons
+    = f.label :image, class: 'PostForm__buttons__image' do
+      = icon('far', 'image', class: 'imageIcon')
+      = f.file_field :image, class: 'Hidden'
+    = icon('fas', 'hashtag', class: 'tagIcon')
+    = f.submit 'SEND', class: 'PostForm__submit'

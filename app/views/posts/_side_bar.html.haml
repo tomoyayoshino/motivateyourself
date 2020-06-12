@@ -1,0 +1,24 @@
+.SideBar
+  -# = form_with(url: '#', local: true, method: :get, class: "SearchForm") do |f|
+  -#   = f.text_field :keyword, placeholder: "投稿を検索する", class: "SearchForm__input"
+  -#   = f.submit "検索", class: "SearchForm__btn"
+  -# -# .contents.row
+  -#   - @posts.each do |post|
+  -#     = render partial: "post", locals: { post: post }
+
+  .PostBox
+    .UserInfo
+      .UserInfo--image
+      .UserInfo__nameBox
+        .UserInfo__nameBox--name
+          ヨシノ
+        .UserInfo__nameBox--id
+          @yoshitomo
+    = form_with(model: @post, local: true, class: "PostForm") do |f|
+      = f.text_area :content, placeholder: "type a text", class: "PostForm__textarea"
+      .PostForm__buttons
+        = f.label :image, class: 'PostForm__buttons__image' do
+          = icon('far', 'image', class: 'imageIcon')
+          = f.file_field :image, class: 'Hidden'
+        = icon('fas', 'hashtag', class: 'tagIcon')
+        = f.submit 'SEND', class: 'PostForm__submit'

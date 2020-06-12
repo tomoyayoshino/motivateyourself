@@ -1,0 +1,169 @@
+* {
+  box-sizing: border-box;
+}
+
+// @mixin Logo {
+//   padding: 0 5px;
+//   text-decoration: none;
+//   color: white;
+// }
+
+// .Header {
+//   width: 100vw;
+//   height: 40px;
+//   line-height: 40px;
+//   background-color: lightblue;
+//   display: flex;
+//   justify-content: space-between;
+//   &__left {
+//     a{
+//       @include Logo;
+//       font-weight: bold;
+//       font-size: 30px;
+//     }
+//   }
+//   &__right {
+//     display: flex;
+//     margin-right: 10px;
+//     a{
+//       @include Logo;
+//     }
+//   }
+// }
+
+.wrapper {
+  display: flex;
+}
+
+@mixin timeline_size {
+  width: 25vw;
+  height: 100vh;
+}
+
+.SideBar {
+  // background-color: pink;
+  @include timeline_size;
+  .SearchForm {
+    background-color: gray;
+    padding: 10px;
+    display: flex;
+    height: 60px;
+    line-height: 60px;
+    &__input {
+      width: 25vw;
+      height: 40px;
+    }
+    &__btn {
+      height: 40px;
+    }
+  }
+  .PostBox {
+    background-color: lightgray;
+    border: 1px solid black;
+    height: 500px;
+    width: 25vw;
+    padding: 0 5px;
+    .UserInfo {
+      &--image {
+      }
+      &__nameBox {
+        display: flex;
+        font-size: 20px;
+        &--name {
+          margin-right: 5px;
+        }
+        &--id {
+        }
+      }
+    }
+    .PostForm {
+      height: 100%;
+      &__textarea{
+        height: 200px;
+        width: 100%;
+        font-size: 20px;
+      }
+      &__buttons{
+        display: flex;
+        justify-content: flex-end;
+        &__image{
+          cursor: pointer;
+          margin-right: 15px;
+          .imageIcon{
+            font-size: 40px;
+          }
+          .Hidden{}
+          input {
+            display: none;
+          }
+        }
+        .tagIcon{
+          cursor: pointer;
+          font-size: 34px;
+        }
+      }
+      &__submit{
+        cursor: pointer;
+        margin-left: 30px;
+        font-size: 30px;
+        padding: 0 10px;
+      }
+    }
+  }
+}
+
+.Timeline {
+  padding: 1px 5px;
+  @include timeline_size;
+  overflow: scroll;
+  &__header {
+    outline: 1px solid black;
+    background-color: #52b03b;
+    height: 50px;
+    line-height: 50px;
+    color: white;
+    position: relative;
+    &--name {
+      font-size: 20px;
+      font-weight: bold;
+      position: absolute;
+      left: 25px;
+    }
+    &--icon {
+      position: absolute;
+      top: 18px;
+      left: 5px;
+    }
+  }
+  &__main {
+    .ContentBox{
+      outline: 1px solid black;
+      &__info{
+        display: flex;
+        justify-content: space-between;
+        height: 50px;
+        &--date{
+          font-size: 12px;
+        }
+      }
+      &__contents{
+        &--text {
+          outline: 1px solid lightgray;
+          height: 200px;
+          width: 100%;
+        }
+      }
+      &__actionBar{}
+    }
+  }
+}
+
+.TagTimeline {
+  background-color: lightseagreen;
+  @include timeline_size;
+}
+
+.FavoriteTimeline {
+  background-color: lightcoral;
+  @include timeline_size;
+}
