@@ -8,7 +8,7 @@
 
 @mixin timeline_size {
   height: 100vh;
-  width: calc((100vw - 100px) / 3);
+  width: calc(100vw - 100px);
 }
 
 .Search{
