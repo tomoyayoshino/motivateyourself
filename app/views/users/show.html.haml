@@ -2,11 +2,13 @@
   .Profile
     .Profile__image
       -if @image.present?
-        = image_tag @image.url, width: '100px'
+        = image_tag @image.url, size: '100x100'
     .Profile__name
       %p.userName="#{@name}さんの投稿一覧"
+    .Profile__text
+      = @profile
     - if user_signed_in? && current_user.id == @user.id
-      = link_to 'プロフィールを編集する', edit_user_registration_path(@user.id)
+      = link_to 'プロフィールを編集する', edit_user_registration_path(current_user)
   .Posts
     - @posts.each do |post|
       .Posts__contents
