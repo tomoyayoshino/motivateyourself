@@ -4,6 +4,7 @@
   width: calc(100vw - 100px);
   .Profile {
     background-color: lightgreen;
+    display: flex;
   }
   .Posts {
     height: calc(100vh - 24px);

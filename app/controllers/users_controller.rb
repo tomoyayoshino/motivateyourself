@@ -14,10 +14,10 @@ class UsersController < ApplicationController
   end
 
   def show
-    user = User.find(params[:id])
-    @name = user.name
-    @posts = user.posts.order("created_at DESC")
-    @image = user.image
+    @user = User.find(params[:id])
+    @name = @user.name
+    @posts = @user.posts.order("created_at DESC")
+    @image = @user.image
   end
 
   private
