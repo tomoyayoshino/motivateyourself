@@ -7,7 +7,7 @@
       .ContentBox
         .ContentBox__info
           .ContentBox__info--image
-            画像
+              = image_tag post.user.image.url, width: '100px'
           .ContentBox__info__user
             .ContentBox__info__user--userName
               =link_to "#{post.user.name}", "/users/#{post.user.id}"
