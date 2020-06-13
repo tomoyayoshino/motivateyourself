@@ -9,9 +9,3 @@
         %p.Posts__contents--text= post.content
         - if post.image?
           = image_tag post.image.url, height: '200', class: 'Posts__contents--image'
-  -# .Likes
-  -#   - @user.like_posts.each do |post|
-  -#     = post.user.name
-  -#     = post.content
-  -#     - if post.image?
-  -#       = image_tag post.image.url, height: '200'
