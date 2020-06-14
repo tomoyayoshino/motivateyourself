@@ -8,12 +8,17 @@
           =@post.user.name
       .ContentBox__info--date
         = @post.created_at.strftime("%Y-%m-%d %H:%M:%S")
+      .ContentBox__info--follow
+      - if current_user != @user
+        - if @post.user.followed_by?(current_user)
+          = link_to "フォロー済み", user_relationships_path(@post.user.id), method: :delete
+        - else 
+          = link_to "フォローする", user_relationships_path(@post.user.id), method: :post
     .ContentBox__contents
       .ContentBox__contents--text
         %span= @post.content
       = image_tag @post.image.url, class: '.ContentBox__contents--image' if @post.image.present?
     .ContentBox__actionBar
-      %i.fas.fa-star
       - if user_signed_in? && current_user.id == @post.user_id
         = link_to '編集', edit_post_path(@post.id), method: :get
         = link_to '削除', post_path(@post.id), method: :delete
