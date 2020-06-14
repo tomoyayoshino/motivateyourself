@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/about', to:'staticpages#about'
   resources :posts do
     resources :comments, only: :create
+    resource :favorites, only: [:create, :destroy]
   end
   resources :users, only: :show
 end

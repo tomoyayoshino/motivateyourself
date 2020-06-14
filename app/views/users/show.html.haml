@@ -9,9 +9,18 @@
       = @profile
     - if user_signed_in? && current_user.id == @user.id
       = link_to 'プロフィールを編集する', edit_user_registration_path(current_user)
-  .Posts
-    - @posts.each do |post|
-      .Posts__contents
-        %p.Posts__contents--text= post.content
-        - if post.image?
-          = image_tag post.image.url, height: '200', class: 'Posts__contents--image'
+  .UserShow__contents
+    .Posts
+      %h1 あなたの投稿一覧
+      - @posts.each do |post|
+        .Posts__contents
+          %p.Posts__contents--text= post.content
+          - if post.image?
+            = image_tag post.image.url, height: '200', class: 'Posts__contents--image'
+    .Posts
+      %h1 あなたのお気に入り一覧
+      - @favorite_posts.each do |post|
+        .Posts__contents
+          %p.Posts__contents--text= post.content
+          - if post.image?
+            = image_tag post.image.url, height: '200', class: 'Posts__contents--image'
