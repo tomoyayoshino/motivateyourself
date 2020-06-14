@@ -1,17 +1,26 @@
 .UserShow {
   padding: 5px;
   height: 100vh;
-  width: calc(100vw - 100px);
+  
   .Profile {
+    width: calc(100vw - 100px);
     background-color: lightgreen;
     display: flex;
   }
-  .Posts {
-    height: calc(100vh - 24px);
-    overflow: scroll;
-    &__contents {
-      border: 1px solid black;
-      margin-bottom: 5px;
+  &__contents {
+    
+    display: flex;
+    .Posts {
+      overflow: scroll;
+      width: calc((100vw - 100px) / 2);
+      height: calc(100vh - 106px);
+      &__contents {
+        border: 1px solid black;
+        margin-bottom: 5px;
+        &--text {
+          white-space: pre-wrap;
+        }
+      }
     }
   }
 }

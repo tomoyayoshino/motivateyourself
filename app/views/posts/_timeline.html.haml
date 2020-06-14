@@ -20,7 +20,7 @@
             %p= post.content
           = image_tag post.image.url, class: '.ContentBox__contents--image' if post.image.present?
         .ContentBox__actionBar
-          %i.fas.fa-comment
+          = render partial: "favorite", locals: { post: post }
           - if user_signed_in? && current_user.id == post.user_id
             = link_to '編集', edit_post_path(post.id), method: :get
             = link_to '削除', post_path(post.id), method: :delete

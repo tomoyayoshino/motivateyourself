@@ -19,6 +19,7 @@ class UsersController < ApplicationController
     @posts = @user.posts.order("created_at DESC")
     @image = @user.image
     @profile = @user.profile
+    @favorite_posts = @user.favorite_posts
   end
 
   private
