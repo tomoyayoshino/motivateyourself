@@ -11,11 +11,6 @@
   width: calc(100vw - 100px);
 }
 
-.Search{
-  @include timeline_size;
-  background-color: lightgrey;
-}
-
 .PostBox {
   background-color: lightgray;
   border: 1px solid black;
@@ -134,6 +129,13 @@
       }
     }
   }
+}
+
+.FavoriteIcon {
+  color: gray;
+}
+.unFavoriteIcon {
+  color: #edc600;
 }
 
 .TagTimeline {

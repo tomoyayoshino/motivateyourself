@@ -1,6 +1,6 @@
 $(function(){
   $('.Timeline__header').on('click', function(e){
-    e.preventDefault()
+    e.preventDefault();
     $('.Timeline__main').animate({scrollTop:0});
   })
 });
