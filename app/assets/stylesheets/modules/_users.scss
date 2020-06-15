@@ -1,18 +1,17 @@
 .UserShow {
-  padding: 5px;
+  margin: 0 5px;
   height: 100vh;
   
   .Profile {
-    width: calc(100vw - 100px);
+    width: calc(100vw - 100px - 10px);
     background-color: lightgreen;
     display: flex;
   }
   &__contents {
-    
     display: flex;
     .Posts {
       overflow: scroll;
-      width: calc((100vw - 100px) / 2);
+      width: calc((100vw - 100px - 10px) / 2);
       height: calc(100vh - 106px);
       &__contents {
         border: 1px solid black;
@@ -26,14 +25,3 @@
 }
 
 
-// .UserShow
-//   .Profile
-//     .Profile__image
-//     .Profile__name
-//       %p.userName="#{@name}さんの投稿一覧"
-//   .Posts
-//     .Posts__contents
-//     - @posts.each do |post|
-//       %p.Posts__contents--text= post.content
-//       - if post.image?
-//         = image_tag post.image.url, height: '200', class: 'Posts__contents--image'

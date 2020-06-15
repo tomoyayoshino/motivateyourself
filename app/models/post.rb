@@ -3,6 +3,7 @@ class Post < ApplicationRecord
   belongs_to :user
   has_many :comments
   has_many :favorites
+  acts_as_taggable
 
   mount_uploader :image, ImageUploader
 

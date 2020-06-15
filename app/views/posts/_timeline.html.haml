@@ -11,23 +11,27 @@
           .ContentBox__info__user
             .ContentBox__info__user--userName
               =link_to "#{post.user.name}", "/users/#{post.user.id}"
-            .ContentBox__info__user--userId
-              
-          .ContentBox__info--date
-            = post.created_at.strftime("%Y-%m-%d %H:%M:%S")
+          .ContentBox__info--follow
+            - if current_user != post.user
+              - if post.user.followed_by?(current_user)
+                %p= link_to "フォロー解除", user_relationships_path(post.user.id), method: :delete
+              - else
+                %p= link_to "フォローする", user_relationships_path(post.user.id), method: :post
         .ContentBox__contents
           .ContentBox__contents--text
             %p= post.content
-          = image_tag post.image.url, class: '.ContentBox__contents--image' if post.image.present?
+          = image_tag post.image.url, class: 'ContentBox__contents--image' if post.image.present?
+        .ContentBox__tags
+          - unless post.tag_list.empty?
+            タグ：
+            - post.tag_list.each do |tag|
+              = link_to tag, posts_path(tag_name: tag), class: "ContentBox__contents--tag"
         .ContentBox__actionBar
-          - if current_user != post.user
-            - if post.user.followed_by?(current_user)
-              %p= link_to "フォロー解除", user_relationships_path(post.user.id), method: :delete
-            - else
-              %p= link_to "フォローする", user_relationships_path(post.user.id), method: :post
-          = render partial: "favorite", locals: { post: post }
-
+          .ContentBox__actionBar--date
+            = post.created_at.strftime("%Y-%m-%d %H:%M:%S")
           - if user_signed_in? && current_user.id == post.user_id
-            = link_to '編集', edit_post_path(post.id), method: :get
-            = link_to '削除', post_path(post.id), method: :delete
+            .ContentBox__actionBar--edit
+              = link_to '編集', edit_post_path(post.id), method: :get
+          .ContentBox__actionBar--favorite
+            = render partial: "favorite", locals: { post: post }
           = link_to '詳細', post_path(post.id), method: :get
