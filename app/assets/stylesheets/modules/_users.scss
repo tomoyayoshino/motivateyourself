@@ -8,7 +8,6 @@
     display: flex;
   }
   &__contents {
-    
     display: flex;
     .Posts {
       overflow: scroll;
@@ -26,14 +25,3 @@
 }
 
 
-// .UserShow
-//   .Profile
-//     .Profile__image
-//     .Profile__name
-//       %p.userName="#{@name}さんの投稿一覧"
-//   .Posts
-//     .Posts__contents
-//     - @posts.each do |post|
-//       %p.Posts__contents--text= post.content
-//       - if post.image?
-//         = image_tag post.image.url, height: '200', class: 'Posts__contents--image'

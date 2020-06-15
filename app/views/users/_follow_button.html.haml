@@ -1,5 +1,5 @@
-= link_to "フォロー", follows_user_path(@user.id)
-= link_to "フォロワー", followers_user_path(@user.id)
+= link_to "following", follows_user_path(@user.id)
+= link_to "followers", followers_user_path(@user.id)
 - if current_user != @user
   - if @user.followed_by?(current_user)
     = link_to "フォロー解除", user_relationships_path(@user.id), method: :delete

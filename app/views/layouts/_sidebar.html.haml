@@ -1,5 +1,6 @@
 .SideBar
   - if user_signed_in?
+    = image_tag current_user.image.url, size: '80x80'
     = current_user.name
     = link_to 'Profile', "/users/#{current_user.id}", class:".SideBar__list"
     = link_to 'Post', new_post_path, class:".SideBar__list"
