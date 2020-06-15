@@ -4,10 +4,11 @@
     .UserInfo__nameBox
       .UserInfo__nameBox--name
         = current_user.name
-      .UserInfo__nameBox--id
-        @yoshitomo
   = form_with(model: @post, local: true, class: "PostForm") do |f|
+    = f.label :content
     = f.text_area :content, placeholder: "type a text", class: "PostForm__textarea"
+    = f.label :tag_list
+    = f.text_field :tag_list, placeholder: "add tags split ','",value: @post.tag_list.join(','), class: "PostForm__tag"
     .PostForm__buttons
       = f.label :image, class: 'PostForm__buttons__image' do
         = icon('far', 'image', class: 'imageIcon')
