@@ -8,12 +8,17 @@
     display: flex;
   }
   &__contents {
-    display: flex;
-    .Posts {
+    &__header{
+      display: flex;
+      justify-content: space-evenly;
+      border: 1px solid black;
+      margin-bottom: 5px;
+    }
+    &__timeline {
       overflow: scroll;
-      width: calc((100vw - 100px - 10px) / 2);
-      height: calc(100vh - 106px);
-      &__contents {
+      width: calc(100vw - 100px - 10px);
+      height: calc(100vh - 136px);
+      &__box{
         border: 1px solid black;
         margin-bottom: 5px;
         &--text {
@@ -24,4 +29,14 @@
   }
 }
 
+.Usertabs{
+  display: none;
+}
 
+.show {
+  display: block;
+}
+
+.active {
+  color: darkgray;
+}
