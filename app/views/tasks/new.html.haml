@@ -1,0 +1,11 @@
+.TasksNew
+  %div{style: "width: 300px;"}
+    = form_with(model: @task, local: true) do |f|
+      %div
+        = f.label :title, 'タスク名'
+        = f.text_field :title, size: 50
+      %div
+        = f.label :description, '詳細'
+        = f.text_area :description
+      = f.submit 'Submit'
+  %p= link_to '一覧に戻る', root_path

@@ -19,7 +19,7 @@ class UsersController < ApplicationController
     @posts = @user.posts.order("created_at DESC")
     @image = @user.image
     @profile = @user.profile
-    @favorite_posts = @user.favorite_posts
+    @favorite_posts = @user.favorite_posts.order("created_at DESC")
     # DM機能
     @currentUserEntry=Entry.where(user_id: current_user.id)
     @userEntry=Entry.where(user_id: @user.id)

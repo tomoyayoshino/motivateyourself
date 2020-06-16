@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_16_030101) do
+ActiveRecord::Schema.define(version: 2020_06_16_071602) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
@@ -94,6 +94,18 @@ ActiveRecord::Schema.define(version: 2020_06_16_030101) do
     t.index ["name"], name: "index_tags_on_name", unique: true
   end
 
+  create_table "tasks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title", null: false
+    t.text "description"
+    t.datetime "target_at"
+    t.datetime "completed_at"
+    t.boolean "completed", default: false, null: false
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_tasks_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "email", default: "", null: false
@@ -115,4 +127,5 @@ ActiveRecord::Schema.define(version: 2020_06_16_030101) do
   add_foreign_key "messages", "rooms"
   add_foreign_key "messages", "users"
   add_foreign_key "taggings", "tags"
+  add_foreign_key "tasks", "users"
 end

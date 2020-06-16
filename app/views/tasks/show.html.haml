@@ -1,0 +1,9 @@
+.TasksShow
+  %table#TaskShowTable
+    %tr
+      %th Title
+      %td= @task.title
+    %tr
+      %th Description
+      %td= @task.description
+  %p= link_to '一覧に戻る', root_url
