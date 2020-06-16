@@ -1,12 +1,9 @@
 .TasksShow
-  %table
+  %table#TaskShowTable
     %tr
       %th Title
       %td= @task.title
     %tr
       %th Description
       %td= @task.description
-    %tr
-      %th Username
-      %td= @task.user.name
-  %p= link_to '一覧に戻る', tasks_url
+  %p= link_to '一覧に戻る', root_url

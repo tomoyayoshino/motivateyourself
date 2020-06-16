@@ -1,14 +1,10 @@
 class TasksController < ApplicationController
   before_action :authenticate_user!
-
-  def index
-    @tasks = current_user.tasks
-  end
   
   def show
     @task = target_task params[:id]
   end
-  
+
   def new
     @task = Task.new
   end
@@ -16,7 +12,7 @@ class TasksController < ApplicationController
   def create
     @task = current_user.tasks.new task_params
     @task.save!
-    redirect_to @task
+    redirect_to root_path
   end
   
   def edit
@@ -26,13 +22,13 @@ class TasksController < ApplicationController
   def update
     @task = target_task params[:id]
     @task.update(task_params)
-    redirect_to @task
+    redirect_to root_path
   end
   
   def destroy
     @task = target_task params[:id]
     @task.destroy
-    redirect_to tasks_url
+    redirect_to root_path
   end
   
   private

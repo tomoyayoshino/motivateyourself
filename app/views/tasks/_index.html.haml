@@ -1,17 +1,13 @@
-.TasksIndex
+.TaskIndex
   %table
     %tr
-      %th Id
-      %th Title
-      %th Description
+      %th#ToDoTitle ToDoList
       %th
       %th
       %th
-    - @tasks.each do |task|
+    - current_user.tasks.each do |task|
       %tr
-        %td= task.id
-        %td= task.title
-        %td= task.description
+        %td.TaskTitle= task.title
         %td= link_to 'Show', task_path(task)
         %td= link_to 'Edit', edit_task_path(task)
         %td= link_to 'Delete', task_path(task), method: :delete
