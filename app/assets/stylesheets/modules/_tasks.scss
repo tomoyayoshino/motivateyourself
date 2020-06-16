@@ -7,8 +7,17 @@
   cursor: pointer;
 }
 
-#TaskShowTable {
-  display: flex;
+.TaskDescription {
+  display: none;
+  cursor: pointer;
+}
+
+.TaskShow {
+  &__detail {
+    color: gray;
+    display: inline;
+    cursor: pointer;
+  }
 }
 
 #ToDoTitle {
