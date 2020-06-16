@@ -1,0 +1,23 @@
+.DM
+  %h1 DM
+  %h4 参加者
+  - @entries.each do |e|
+    %h5
+      %strong
+        = link_to "#{e.user.name}さん", "/users/#{e.user.id}"
+  %hr/
+  - if @messages.present?
+    - @messages.each do |m|
+      %strong= m.content
+      %small
+        by
+        %strong
+          = link_to "#{m.user.name}さん", "/users/#{m.user.id}"
+      %hr/
+  - else
+    %h3.text-center メッセージはまだありません
+  = form_for @message do |f|
+    = f.text_field :content, placeholder: "メッセージを入力して下さい" , size: 70
+    = f.hidden_field :room_id, value: @room.id
+    %br/
+    = f.submit "投稿する"
