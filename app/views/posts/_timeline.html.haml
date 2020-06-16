@@ -20,7 +20,8 @@
         .ContentBox__contents
           .ContentBox__contents--text
             %p= post.content
-          = image_tag post.image.url, class: 'ContentBox__contents--image' if post.image.present?
+          = link_to post.image.url, 'data-lightbox': post.image do
+            = image_tag post.image.url,  class: 'ContentBox__contents--image' if post.image.present?
         .ContentBox__tags
           - unless post.tag_list.empty?
             タグ：
