@@ -16,4 +16,8 @@ $(function(){
   $("#userFavoriteButton").on("click", tabFavorite);
   $("#userPostButton").on("click", tabPost);
 
+  $('.UserShow__contents__header').on('click', function(e){
+    e.preventDefault();
+    $('.UserShow__contents__timeline').scrollTop(0);
+  })
 });

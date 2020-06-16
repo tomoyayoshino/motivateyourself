@@ -12,8 +12,8 @@
     = render "follow_button"
   .UserShow__contents
     .UserShow__contents__header
-      %h1#userPostButton.active 投稿一覧
-      %h1#userFavoriteButton お気に入り一覧
+      %h1#userPostButton.userShowTabs.active 投稿一覧
+      %h1#userFavoriteButton.userShowTabs お気に入り一覧
     .UserShow__contents__timeline
       .UserPosts.Usertabs.show
         - @posts.each do |post|

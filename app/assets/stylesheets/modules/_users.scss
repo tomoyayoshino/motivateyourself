@@ -13,6 +13,7 @@
       justify-content: space-evenly;
       border: 1px solid black;
       margin-bottom: 5px;
+      color: gray;
     }
     &__timeline {
       overflow: scroll;
@@ -29,14 +30,16 @@
   }
 }
 
-.Usertabs{
+// js用
+.userShowTabs {
+  cursor: pointer;
+}
+.Usertabs {
   display: none;
 }
-
 .show {
   display: block;
 }
-
 .active {
-  color: darkgray;
+  color: black;
 }
