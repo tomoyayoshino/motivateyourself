@@ -8,23 +8,10 @@
     margin: 2px 0;
     color: gray;
   }
-  &__contents {
-    &__timeline {
-      overflow: scroll;
-      height: calc(100vh - 328px);
-      &__box{
-        border: 1px solid black;
-        margin-bottom: 5px;
-        &--text {
-          white-space: pre-wrap;
-        }
-      }
-    }
-  }
 }
 
 .Profile {
-  background-color: lightgray;
+  background-color: darkgray;
   outline: 1px solid black;
   height: 200px;
   padding: 5px;
@@ -59,6 +46,11 @@
       margin-left: 100px;
     }
   }
+}
+
+.UserTimeline {
+  height: calc(100vh - 230px);
+  overflow: scroll;
 }
 
 // js用

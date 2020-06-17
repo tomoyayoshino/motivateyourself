@@ -35,23 +35,16 @@
     .UserShow__header
       %h1#userPostButton.userShowTabs.active 投稿一覧
       %h1#userFavoriteButton.userShowTabs お気に入り一覧
-    .UserShow__contents__timeline
-      .UserPosts.Usertabs.show
-        - @posts.each do |post|
-          = image_tag post.user.image.url, size: '50x50', class: 'UserShow__contents__timeline--image'
-          =link_to post.user.name, "/users/#{post.user.id}"
-          .UserShow__contents__timeline__box
-            %p.UserShow__contents__timeline__box--text= post.content
-            - if post.image?
-              = image_tag post.image.url, height: '200', class: 'UserShow__contents__timeline__box--image'
-      .UserFavorites.Usertabs
-        - @favorite_posts.each do |post|
-          = image_tag post.user.image.url, size: '50x50', class: 'UserPosts__contents--image'
-          =link_to post.user.name, "/users/#{post.user.id}"
-          .UserShow__contents__timeline__box
-            %p.UserShow__contents__timeline__box--text= post.content
-            - if post.image?
-              = image_tag post.image.url, height: '200', class: 'UserShow__contents__timeline__box--image'
+    .UserPosts.Usertabs.show
+      .UserTimeline
+        .Timeline__main
+          - @posts.each do |post|
+            = render "posts/post_content", { post: post }
+    .UserFavorites.Usertabs
+      .UserTimeline
+        .Timeline__main
+          - @favorite_posts.each do |post|
+            = render "posts/post_content", { post: post }
 .rightBar
   = render 'tasks/index'
   .Notification
