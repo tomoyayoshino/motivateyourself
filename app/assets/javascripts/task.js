@@ -4,7 +4,7 @@ $(function(){
     $(this).toggleClass("line-through");
   })
 
-  $(".TaskShow").on('click', function(e){
+  $(".TaskShow__detail").on('click', function(e){
     $(this).next().fadeToggle();
     $(this).toggleClass("active");
   })

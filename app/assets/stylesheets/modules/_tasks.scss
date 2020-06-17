@@ -1,5 +1,8 @@
 .TaskIndex{
   width: 300px;
+  height: 50vh;
+  background-color: lightgray;
+  overflow: scroll;
 }
 
 .TaskTitle {
@@ -9,7 +12,7 @@
 
 .TaskDescription {
   display: none;
-  cursor: pointer;
+  white-space: pre-wrap;
 }
 
 .TaskShow {
@@ -27,4 +30,10 @@
 
 .line-through {
   text-decoration: line-through;
+}
+
+.TaskMotivate {
+  background-color: darkgray;
+  height: calc(100vh - 160px);
+  width: calc(100vw - 100px);
 }
