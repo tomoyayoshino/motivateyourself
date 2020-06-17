@@ -1,18 +1,14 @@
 .UserShow {
+  padding: 1px 3px;
   @include timeline_size;
-  .Profile {
-    background-color: lightgreen;
+  &__header{
     display: flex;
-    height: 200px;
+    justify-content: space-evenly;
+    border: 1px solid black;
+    margin: 2px 0;
+    color: gray;
   }
   &__contents {
-    &__header{
-      display: flex;
-      justify-content: space-evenly;
-      border: 1px solid black;
-      margin-bottom: 5px;
-      color: gray;
-    }
     &__timeline {
       overflow: scroll;
       height: calc(100vh - 328px);
@@ -23,6 +19,44 @@
           white-space: pre-wrap;
         }
       }
+    }
+  }
+}
+
+.Profile {
+  background-color: lightgray;
+  outline: 1px solid black;
+  height: 200px;
+  padding: 5px;
+  position: relative;
+  .ProfileBox {
+    display: flex;
+    &__icon {
+      margin-top: 30px;
+    }
+    &__info{
+      padding: 0 5px;
+      &__nameBox {
+        display: flex;
+        &--name {
+          margin-right: 100px;
+          font-size: 20px;
+          font-weight: bold;
+        }
+      }
+      &--text {
+        p {
+          white-space: pre-wrap;
+        }
+      }
+    }
+  }
+  &__actionBar {
+    display: flex;
+    position: absolute;
+    bottom: 3px;
+    &--follow {
+      margin-left: 100px;
     }
   }
 }

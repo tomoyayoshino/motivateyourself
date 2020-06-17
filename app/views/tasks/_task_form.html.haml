@@ -1,5 +1,5 @@
 .TaskForm
-  %div{style: "width: 300px;"}
+  %div
     = form_with(model: @task, local: true) do |f|
       %div
         %p= f.label :title, 'タスク名'
