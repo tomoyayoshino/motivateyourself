@@ -40,3 +40,7 @@
             %p.UserShow__contents__timeline__box--text= post.content
             - if post.image?
               = image_tag post.image.url, height: '200', class: 'UserShow__contents__timeline__box--image'
+.rightBar
+  = render 'tasks/index'
+  .Notification
+    何か

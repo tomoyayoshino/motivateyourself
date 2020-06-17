@@ -1,11 +1,9 @@
 .UserShow {
-  margin: 0 5px;
-  height: 100vh;
-  
+  @include timeline_size;
   .Profile {
-    width: calc(100vw - 100px - 10px);
     background-color: lightgreen;
     display: flex;
+    height: 200px;
   }
   &__contents {
     &__header{
@@ -17,8 +15,7 @@
     }
     &__timeline {
       overflow: scroll;
-      width: calc(100vw - 100px - 10px);
-      height: calc(100vh - 136px);
+      height: calc(100vh - 328px);
       &__box{
         border: 1px solid black;
         margin-bottom: 5px;
