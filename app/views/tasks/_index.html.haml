@@ -1,11 +1,14 @@
 .TaskIndex
-  #ToDoTitle ToDoList
-  %p= link_to 'ToDoの作成', new_task_path
-  - current_user.tasks.each do |task|
-    .TaskTitle= task.title
-    .TaskShow
-      = link_to 'Edit', edit_task_path(task)
-      = link_to 'Delete', task_path(task), method: :delete
-      %p.TaskShow__detail Detail
-      %p.TaskDescription= task.description
+  .TaskIndex__header
+    #ToDoTitle ToDoList
+    #TaskNew= link_to 'ToDoの追加', new_task_path
+  .TaskContent
+    - current_user.tasks.each do |task|
+      .TaskBox
+        .TaskTitle= task.title
+        .TaskShow
+          = link_to 'Edit', edit_task_path(task)
+          = link_to 'Delete', task_path(task), method: :delete
+          %p.TaskShow__detail Detail
+          %p.TaskShow__description= task.description
 

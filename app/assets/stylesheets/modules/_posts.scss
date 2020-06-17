@@ -4,7 +4,8 @@
 
 @mixin timeline_size {
   height: 100vh;
-  width: calc(100vw - 100px - 300px);
+  width: calc(100vw - 200px - 400px);
+  min-width: 500px;
 }
 
 .PostBox {
@@ -71,7 +72,7 @@
   overflow-wrap: break-word;
   &__header {
     outline: 1px solid black;
-    background-color: #52b03b;
+    background-color: #55c500;
     height: 50px;
     line-height: 50px;
     color: white;
@@ -114,6 +115,9 @@
             white-space: pre-wrap;
           }
         }
+        &--image {
+          text-align: center;
+        }
         img {
           height: 200px;
           // width: 200px;
@@ -134,17 +138,9 @@
   color: #edc600;
 }
 
-.TagTimeline {
-  background-color: lightseagreen;
-  @include timeline_size;
-}
-
-.LikeTimeline {
-  background-color: lightcoral;
-  @include timeline_size;
-}
 
 .ContentShow{
+  @include timeline_size;
   padding: 20px;
   display: flex;
   .ContentBox{
