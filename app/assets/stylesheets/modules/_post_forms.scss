@@ -37,8 +37,8 @@
   background-color: lightgray;
   border: 1px solid black;
   height: 500px;
-  width: 100%;
   padding: 0 5px;
+  @include timeline_size;
   .UserInfo {
     &--image {
     }
