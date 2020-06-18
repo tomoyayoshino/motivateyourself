@@ -1,0 +1,63 @@
+.PostShow {
+  @include timeline_size;
+  padding: 1px 5px;
+  margin: 1px 0;
+  .PostBox {
+    outline: 1px solid black;
+    &__info{
+      display: flex;
+      justify-content: space-between;
+      &--icon{}
+      &--name{}
+      &--follow{}
+    }
+    &__contents {
+      border-bottom: 1px solid lightgray;
+      border-top: 1px solid lightgray;
+      &--text{}
+      &--image{
+        height: 300px;
+        text-align: center;
+      }
+    }
+    &__actionBar {
+      display: flex;
+      justify-content: space-around;
+      &--edit{}
+      &--delete{}
+    }
+  }
+}
+
+.RightBar {
+  width: 400px;
+  padding: 1px 5px;
+  margin: 1px 0;
+  .CommentContents {
+    background-color: lightgray;
+    outline: 1px solid black;
+    &__header {
+      height: 56px;
+      line-height: 56px;
+      background-color: gray;
+      margin-bottom: 5px;
+      border-bottom: 1px solid black;
+    }
+    &__form {
+      margin-left: 5px;
+      &--textarea{}
+      &--submit{}
+    }
+    &__index{
+      margin-left: 5px;
+      height: calc(100vh - 146px);
+      overflow: scroll;
+      &--header{}
+      &__box {
+        display: flex;
+        &--text{}
+        &--name{}
+      }
+    }
+  }
+}
