@@ -6,6 +6,7 @@
 @import "modules/post_forms";
 @import "modules/post_shows";
 @import "modules/user_forms";
+@import "modules/follow";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
@@ -19,5 +20,4 @@ a{
 
 .Notification{
   height: 50vh;
-  background-color: darkgray;
 }

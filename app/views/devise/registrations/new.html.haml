@@ -26,7 +26,7 @@
         = f.label :password
         - if @minimum_password_length
           %em
-            (#{@minimum_password_length}以内で入力)
+            (#{@minimum_password_length}以上で入力)
         %br/
         = f.password_field :password, autocomplete: "new-password"
       .field
