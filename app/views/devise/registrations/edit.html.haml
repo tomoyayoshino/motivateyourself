@@ -1,4 +1,4 @@
-.EditUser
+.DeviseForms
   %h2
     Edit #{resource_name.to_s.humanize}
   = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
@@ -6,48 +6,50 @@
 
     .field
       = f.label :name
-      %em (8 characters maximum)
+      %em (8文字以内で入力)
       %br/
-      = f.text_field :name, autofocus: true, autocomplete: "name", maxlength: "8"
+      = f.text_field :name, autofocus: true, autocomplete: "name", maxlength: "8", class: "DeviseWidth"
+
 
     .field
       = f.label :email
       %br/
-      = f.email_field :email, autofocus: true, autocomplete: "email"
+      = f.email_field :email, autofocus: true, autocomplete: "email", class: "DeviseWidth"
+
     - if devise_mapping.confirmable? && resource.pending_reconfirmation?
       %div
         Currently waiting confirmation for: #{resource.unconfirmed_email}
 
     .field
       = f.label :image
-      %em (profile image)
+      %em (プロフィール画像)
       %br/
-      = f.file_field :image
+      = f.file_field :image, class: "DeviseWidth"
+
 
     .field
       = f.label :profile
-      %em (138 characters maximum)
+      %em (138文字以内で入力)
       %br/
-      = f.text_area :profile, autofocus: true, maxlength: "138"
-
+      = f.text_area :profile, autofocus: true, maxlength: "138", class: "DeviseProfile"
 
     .field
       = f.label :password
-      %i (leave blank if you don't want to change it)
+      %i (変更したくない場合は空白のままで可)
       %br/
       = f.password_field :password, autocomplete: "new-password"
       - if @minimum_password_length
         %br/
         %em
           = @minimum_password_length
-          characters minimum
+          文字以上で入力
     .field
       = f.label :password_confirmation
       %br/
       = f.password_field :password_confirmation, autocomplete: "new-password"
     .field
       = f.label :current_password
-      %i (we need your current password to confirm your changes)
+      %i (変更にはパスワードが必要です)
       %br/
       = f.password_field :current_password, autocomplete: "current-password"
     .actions
