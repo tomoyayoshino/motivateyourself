@@ -27,11 +27,17 @@
       border-bottom: 1px solid black;
       &--flex {
         display: flex;
-        justify-content: flex-end;
+        justify-content: space-between;
         p {
           line-height: 50px;
           margin: 0 10px;
         }
+      }
+      &--parent {
+        display: flex;
+      }
+      &--date{
+        font-size: 12px;
       }
     }
     &__another {
@@ -39,13 +45,19 @@
       padding: 3px 5px;
       border-top: 1px solid black;
       border-bottom: 1px solid black;
+      &--parent {
+        display: flex;
+        justify-content: space-between;
+      }
       &--flex {
         display: flex;
         justify-content: flex-start;
       }
       &--contents {
         margin: 0 10px;
-
+      }
+      &--date{
+        font-size: 12px;
       }
     }
   }
