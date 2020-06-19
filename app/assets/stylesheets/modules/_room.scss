@@ -1,24 +1,74 @@
 .Message {
-  // @include timeline_size;
-  // padding: 1px 5px;
-  // margin: 1px 0;
+  @include timeline_size;
+  padding: 1px 5px;
+  margin: 1px 0;
 }
 
 .MessageHeader {
-
+  outline: 1px solid black;
+  background-color: gray;
+  height: 50px;
+  line-height: 50px;
+  color: white;
+  margin-bottom: 5px;
 }
 
 .MessageField {
-  height: calc(100vh - 200px);
+  outline: 1px solid black;
+  height: calc(100vh - 126px);
   overflow: scroll;
+  .MessageBox {
+    margin-top: -1px;
+    margin-bottom: 5px;
+    &__current {
+      background-color: #F0FFFF	;
+      padding: 3px 5px;
+      border-top: 1px solid black;
+      border-bottom: 1px solid black;
+      &--flex {
+        display: flex;
+        justify-content: flex-end;
+        p {
+          line-height: 50px;
+          margin: 0 10px;
+        }
+      }
+    }
+    &__another {
+      background-color: #FFF0FF;
+      padding: 3px 5px;
+      border-top: 1px solid black;
+      border-bottom: 1px solid black;
+      &--flex {
+        display: flex;
+        justify-content: flex-start;
+      }
+      &--contents {
+        margin: 0 10px;
+
+      }
+    }
+  }
 }
 
 .MessageForm {
+  background-color: lightgray;
+  outline: 1px solid black;
+  padding: 5px;
+  margin-top: 5px;
   &__form {
     display: flex;
   }
   &__contents {
-
+    width: 100%;
+    line-height: 50px;
+    &--text {
+      width: 88%;
+      height: 50px;
+    }
+    &--image {
+      font-size: 38px;
+    }
   }
 }
 .Hidden {

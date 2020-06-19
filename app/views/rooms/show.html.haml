@@ -6,18 +6,35 @@
   .MessageField
     - if @messages.present?
       - @messages.each do |m|
-        = link_to "#{m.user.name}さん", "/users/#{m.user.id}"
-        = text_url_to_link(h(m.content)).html_safe
-        %hr/
+        .MessageBox
+          - if m.user == current_user
+            .MessageBox__current
+              .MessageBox__current--flex
+                = link_to m.image.url, 'data-lightbox': m.image do
+                  = image_tag m.image.url, class: 'MessageBox--image', size: '66x50' if m.image.present?
+                %p= text_url_to_link(h(m.content)).html_safe
+          - else
+            .MessageBox__another
+              .MessageBox__another--flex
+                = image_tag m.user.image.url, size: '50x50'
+                .MessageBox__another--contents
+                  = link_to "#{m.user.name}さん", "/users/#{m.user.id}"
+                  %p= text_url_to_link(h(m.content)).html_safe
+                = link_to m.image.url, 'data-lightbox': m.image do
+                  = image_tag m.image.url,  class: 'MessageBox--image', size: '66x50' if m.image.present?
     - else
       %h3.text-center メッセージはまだありません
   .MessageForm
     = form_with model: @message , class: "MessageForm__form", local: true do |f|
       .MessageForm__contents
         = f.text_field :content, placeholder: "メッセージを入力して下さい" , class: "MessageForm__contents--text"
-        = f.label :image, class: "MessageForm__contents--image" do
-          = icon('far', 'image', class: 'form__icon')
+        = f.label :image do
+          = icon('far', 'image', class: "MessageForm__contents--image")
           = f.file_field :image, class: 'Hidden'
         = f.hidden_field :room_id, value: @room.id
         %br/
       = f.submit "投稿する", class: "MessageForm__submit"
+.rightBar
+  = render 'tasks/index'
+  .Notification
+    何か
