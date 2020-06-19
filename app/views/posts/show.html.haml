@@ -13,7 +13,7 @@
             %p= link_to "フォローする", user_relationships_path(@post.user.id), method: :post
     .PostBox__contents
       .PostBox__contents--text
-        %p= @post.content
+        %p= text_url_to_link(h(@post.content)).html_safe
       .PostBox__contents--image
         = link_to @post.image.url, 'data-lightbox': @post.image do
           = image_tag @post.image.url, class: 'PostBox__contents--image', height: '300px' if @post.image.present?
@@ -50,4 +50,4 @@
           .CommentContents__index__box
             = link_to comment.user.name, "/users/#{comment.user_id}", class: ".CommentContents__index__box--name"
             ：
-            .CommentContents__index__box--text= comment.text
+            .CommentContents__index__box--text= text_url_to_link(h(comment.text)).html_safe

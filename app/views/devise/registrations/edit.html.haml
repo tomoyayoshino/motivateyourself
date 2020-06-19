@@ -29,9 +29,9 @@
 
     .field
       = f.label :profile
-      %em (138文字以内で入力)
+      %em (140文字、6行以内で 入力)
       %br/
-      = f.text_area :profile, autofocus: true, maxlength: "138", class: "DeviseProfile"
+      = f.text_area :profile, autofocus: true, maxlength: "140", class: "DeviseProfile"
 
     .field
       = f.label :password

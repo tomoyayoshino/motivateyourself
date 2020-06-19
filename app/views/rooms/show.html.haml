@@ -8,7 +8,8 @@
   %hr/
   - if @messages.present?
     - @messages.each do |m|
-      %strong= m.content
+      -# %strong= m.content
+      = text_url_to_link(h(m.content)).html_safe
       %small
         by
         %strong

@@ -12,7 +12,7 @@
           %p= link_to "フォローする", user_relationships_path(post.user.id), method: :post
   .ContentBox__contents
     .ContentBox__contents--text
-      %p= post.content
+      %p= text_url_to_link(h(post.content)).html_safe
     .ContentBox__contents--image
       = link_to post.image.url, 'data-lightbox': post.image do
         = image_tag post.image.url,  class: 'ContentBox__contents--image' if post.image.present?
