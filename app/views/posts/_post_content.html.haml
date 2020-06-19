@@ -1,0 +1,33 @@
+.ContentBox
+  .ContentBox__info
+    .ContentBox__info--image
+      = image_tag post.user.image.url, size: '50x50'
+    .ContentBox__info--name
+      =link_to "#{post.user.name}", "/users/#{post.user.id}"
+    .ContentBox__info--follow
+      - if current_user != post.user
+        - if post.user.followed_by?(current_user)
+          %p= link_to "フォロー解除", user_relationships_path(post.user.id), method: :delete
+        - else
+          %p= link_to "フォローする", user_relationships_path(post.user.id), method: :post
+  .ContentBox__contents
+    .ContentBox__contents--text
+      %p= text_url_to_link(h(post.content)).html_safe
+    .ContentBox__contents--image
+      = link_to post.image.url, 'data-lightbox': post.image do
+        = image_tag post.image.url,  class: 'ContentBox__contents--image' if post.image.present?
+  .ContentBox__tags
+    - unless post.tag_list.empty?
+      タグ：
+      - post.tag_list.each do |tag|
+        = link_to tag, posts_path(tag_name: tag), class: "ContentBox__tags--tag"
+  .ContentBox__actionBar
+    .ContentBox__actionBar--date
+      = post.created_at.strftime("%Y-%m-%d %H:%M:%S")
+    - if user_signed_in? && current_user.id == post.user_id
+      .ContentBox__actionBar--edit
+        = link_to '編集', edit_post_path(post.id), method: :get
+    .ContentBox__actionBar--favorite
+      = render partial: "posts/favorite", locals: { post: post }
+    .ContentBox__actionBar--detail
+      = link_to '詳細', post_path(post.id), method: :get

@@ -1,23 +1,44 @@
-.DM
-  %h1 DM
-  %h4 参加者
-  - @entries.each do |e|
-    %h5
-      %strong
-        = link_to "#{e.user.name}さん", "/users/#{e.user.id}"
-  %hr/
-  - if @messages.present?
-    - @messages.each do |m|
-      %strong= m.content
-      %small
-        by
-        %strong
-          = link_to "#{m.user.name}さん", "/users/#{m.user.id}"
-      %hr/
-  - else
-    %h3.text-center メッセージはまだありません
-  = form_for @message do |f|
-    = f.text_field :content, placeholder: "メッセージを入力して下さい" , size: 70
-    = f.hidden_field :room_id, value: @room.id
-    %br/
-    = f.submit "投稿する"
+.Message
+  .MessageHeader
+    - @entries.each do |e|
+      = link_to "#{e.user.name}さん", "/users/#{e.user.id}", class: ".MessageHeader--name"
+    のDirect Message
+  .MessageField
+    - if @messages.present?
+      - @messages.each do |m|
+        .MessageBox
+          - if m.user == current_user
+            .MessageBox__current
+              .MessageBox__current--flex
+                .MessageBox__current--date= m.created_at.strftime("%Y年%m月%d日 %H時%M分")
+                .MessageBox__current--parent
+                  = link_to m.image.url, 'data-lightbox': m.image do
+                    = image_tag m.image.url, class: 'MessageBox--image', size: '66x50' if m.image.present?
+                  %p= text_url_to_link(h(m.content)).html_safe
+          - else
+            .MessageBox__another
+              .MessageBox__another--parent
+                .MessageBox__another--flex
+                  = image_tag m.user.image.url, size: '50x50'
+                  .MessageBox__another--contents
+                    = link_to "#{m.user.name}さん", "/users/#{m.user.id}"
+                    %p= text_url_to_link(h(m.content)).html_safe
+                  = link_to m.image.url, 'data-lightbox': m.image do
+                    = image_tag m.image.url,  class: 'MessageBox--image', size: '66x50' if m.image.present?
+                .MessageBox__current--date= m.created_at.strftime("%Y年%m月%d日 %H時%M分")
+    - else
+      %h3.text-center メッセージはまだありません
+  .MessageForm
+    = form_with model: @message , class: "MessageForm__form", local: true do |f|
+      .MessageForm__contents
+        = f.text_field :content, placeholder: "メッセージを入力して下さい" , class: "MessageForm__contents--text"
+        = f.label :image do
+          = icon('far', 'image', class: "MessageForm__contents--image")
+          = f.file_field :image, class: 'Hidden'
+        = f.hidden_field :room_id, value: @room.id
+        %br/
+      = f.submit "投稿する", class: "MessageForm__submit"
+.rightBar
+  = render 'tasks/index'
+  .Notification
+    何か

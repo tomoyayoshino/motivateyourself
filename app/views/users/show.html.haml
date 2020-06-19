@@ -1,42 +1,51 @@
 .UserShow
   .Profile
-    .Profile__image
-      -if @image.present?
-        = image_tag @image.url, size: '100x100'
-    .Profile__name
-      %p.userName="#{@name}"
-    .Profile__text
-      = @profile
-    - if user_signed_in? && current_user.id == @user.id
-      = link_to 'プロフィールを編集する', edit_user_registration_path(current_user)
-    = render "follow_button"
-    - unless @user.id == current_user.id
-      - if (current_user.followed_by? @user) && (@user.followed_by? current_user)
-        - if @isRoom == true
-          %p= link_to 'チャットへ', "/rooms/#{@roomId}" 
-        - else
-          = form_with(model: @room, local: true)  do |f|
-            = fields_for @entry do |e|
-              = e.hidden_field :user_id, value: @user.id
-            = f.submit "チャットを始める"
+    .ProfileBox
+      .ProfileBox__icon
+        -if @image.present?
+          = image_tag @image.url, size: '100x100'
+      .ProfileBox__info
+        .ProfileBox__info__nameBox
+          .ProfileBox__info__nameBox--name
+            = @name
+          .ProfileBox__info__nameBox--btn
+            - if current_user != @user
+              - if @user.followed_by?(current_user)
+                = link_to "フォロー解除", user_relationships_path(@user.id), method: :delete
+              - else
+                = link_to "フォローする", user_relationships_path(@user.id), method: :post
+        .ProfileBox__info--text
+          %p= text_url_to_link(h(@profile)).html_safe
+    .Profile__actionBar
+      - if user_signed_in? && current_user.id == @user.id
+        = link_to 'プロフィール編集', edit_user_registration_path(current_user)
+      - unless @user.id == current_user.id
+        - if (current_user.followed_by? @user) && (@user.followed_by? current_user)
+          - if @isRoom == true
+            = link_to 'チャットへ', "/rooms/#{@roomId}" 
+          - else
+            = form_with(model: @room, local: true)  do |f|
+              = fields_for @entry do |e|
+                = e.hidden_field :user_id, value: @user.id
+              = f.submit "チャットを始める"
+      = link_to "following", follows_user_path(@user.id), class:"Profile__actionBar--follow"
+      = link_to "followers", followers_user_path(@user.id), class:"Profile__actionBar--follow"
+
   .UserShow__contents
-    .UserShow__contents__header
+    .UserShow__header
       %h1#userPostButton.userShowTabs.active 投稿一覧
       %h1#userFavoriteButton.userShowTabs お気に入り一覧
-    .UserShow__contents__timeline
-      .UserPosts.Usertabs.show
-        - @posts.each do |post|
-          = image_tag post.user.image.url, size: '50x50', class: 'UserShow__contents__timeline--image'
-          =link_to post.user.name, "/users/#{post.user.id}"
-          .UserShow__contents__timeline__box
-            %p.UserShow__contents__timeline__box--text= post.content
-            - if post.image?
-              = image_tag post.image.url, height: '200', class: 'UserShow__contents__timeline__box--image'
-      .UserFavorites.Usertabs
-        - @favorite_posts.each do |post|
-          = image_tag post.user.image.url, size: '50x50', class: 'UserPosts__contents--image'
-          =link_to post.user.name, "/users/#{post.user.id}"
-          .UserShow__contents__timeline__box
-            %p.UserShow__contents__timeline__box--text= post.content
-            - if post.image?
-              = image_tag post.image.url, height: '200', class: 'UserShow__contents__timeline__box--image'
+    .UserPosts.Usertabs.show
+      .UserTimeline
+        .Timeline__main
+          - @posts.each do |post|
+            = render "posts/post_content", { post: post }
+    .UserFavorites.Usertabs
+      .UserTimeline
+        .Timeline__main
+          - @favorite_posts.each do |post|
+            = render "posts/post_content", { post: post }
+.rightBar
+  = render 'tasks/index'
+  .Notification
+    何か

@@ -1,33 +1,56 @@
 .UserShow {
-  margin: 0 5px;
-  height: 100vh;
-  
-  .Profile {
-    width: calc(100vw - 100px - 10px);
-    background-color: lightgreen;
+  padding: 1px 3px;
+  @include timeline_size;
+  &__header{
     display: flex;
+    justify-content: space-evenly;
+    border: 1px solid black;
+    margin: 2px 0;
+    color: gray;
   }
-  &__contents {
-    &__header{
-      display: flex;
-      justify-content: space-evenly;
-      border: 1px solid black;
-      margin-bottom: 5px;
-      color: gray;
+}
+
+.Profile {
+  background-color: darkgray;
+  outline: 1px solid black;
+  height: 200px;
+  padding: 5px;
+  position: relative;
+  .ProfileBox {
+    display: flex;
+    &__icon {
+      margin-top: 30px;
     }
-    &__timeline {
-      overflow: scroll;
-      width: calc(100vw - 100px - 10px);
-      height: calc(100vh - 136px);
-      &__box{
-        border: 1px solid black;
-        margin-bottom: 5px;
-        &--text {
+    &__info{
+      padding: 0 5px;
+      &__nameBox {
+        display: flex;
+        &--name {
+          margin-right: 100px;
+          font-size: 20px;
+          font-weight: bold;
+        }
+      }
+      &--text {
+        p {
           white-space: pre-wrap;
         }
       }
     }
   }
+  &__actionBar {
+    display: flex;
+    position: absolute;
+    bottom: 3px;
+    &--follow {
+      margin-left: 100px;
+    }
+  }
+}
+
+.UserTimeline {
+  height: calc(100vh - 230px);
+  overflow: scroll;
 }
 
 // js用

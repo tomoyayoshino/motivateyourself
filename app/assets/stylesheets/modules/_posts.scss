@@ -3,75 +3,17 @@
 }
 
 @mixin timeline_size {
-  height: 100vh;
-  width: calc(100vw - 100px - 300px);
+  width: calc(100vw - 200px - 400px);
+  min-width: 500px;
 }
 
-.PostBox {
-  background-color: lightgray;
-  border: 1px solid black;
-  height: 500px;
-  width: 100%;
-  padding: 0 5px;
-  .UserInfo {
-    &--image {
-    }
-    &__nameBox {
-      display: flex;
-      font-size: 20px;
-      &--name {
-        margin-right: 5px;
-      }
-      &--id {
-      }
-    }
-  }
-}
-
-.PostForm {
-  height: 100%;
-  &__textarea{
-    height: 300px;
-    width: 100%;
-    font-size: 20px;
-    border-style: none;
-  }
-  &__buttons{
-    display: flex;
-    justify-content: flex-end;
-    &__image{
-      cursor: pointer;
-      margin-right: 15px;
-      .imageIcon{
-        font-size: 40px;
-      }
-      .Hidden{}
-      input {
-        display: none;
-      }
-    }
-    .tagIcon{
-      cursor: pointer;
-      font-size: 34px;
-    }
-  }
-  &__submit{
-    cursor: pointer;
-    margin-left: 30px;
-    font-size: 30px;
-    padding: 0 10px;
-  }
-}
-
-
-
-.Timeline {
+@mixin  timeline_format {
   padding: 1px 5px;
   @include timeline_size;
   overflow-wrap: break-word;
   &__header {
     outline: 1px solid black;
-    background-color: #52b03b;
+    background-color: darkgray;
     height: 50px;
     line-height: 50px;
     color: white;
@@ -98,25 +40,29 @@
         display: flex;
         justify-content: space-between;
         height: 50px;
+        line-height: 50px;
+        font-size: 18px;
         &--date{
           font-size: 12px;
         }
       }
       &__contents{
         margin-bottom: 5px;
+        border-top: 1px solid lightgray;
+        border-bottom: 1px solid lightgray;
         &--text {
           padding: 5px;
-          border-top: 1px solid lightgray;
-          border-bottom: 1px solid lightgray;
           min-height: 50px;
           width: 100%;
           p{
             white-space: pre-wrap;
           }
         }
+        &--image {
+          text-align: center;
+        }
         img {
           height: 200px;
-          // width: 200px;
         }
       }
       &__actionBar{
@@ -126,6 +72,10 @@
     }
   }
 }
+.Timeline {
+  @include timeline_format;
+  height: 100vh;
+}
 
 .FavoriteIcon {
   color: gray;
@@ -133,49 +83,3 @@
 .unFavoriteIcon {
   color: #edc600;
 }
-
-.TagTimeline {
-  background-color: lightseagreen;
-  @include timeline_size;
-}
-
-.LikeTimeline {
-  background-color: lightcoral;
-  @include timeline_size;
-}
-
-.ContentShow{
-  padding: 20px;
-  display: flex;
-  .ContentBox{
-    outline: 1px solid black;
-    width: 70vw;
-    max-height: 100vh;
-    &__info{
-      display: flex;
-      justify-content: space-between;
-      height: 50px;
-      &--date{
-        font-size: 12px;
-      }
-    }
-    &__contents{
-      &--text {
-        white-space: pre-wrap;
-        min-height: 100px;
-        outline: 1px solid lightgray;
-        width: 100%;
-        font-size: 20px;
-      }
-      img {
-        height: 400px;
-      }
-    }
-    &__actionBar{
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-    }
-  }
-}
-

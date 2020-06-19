@@ -22,9 +22,9 @@ $(function(){
     })
     .done(function(data){
       let html = buildHTML(data);
-      $('.comments').append(html);
-      $('.textbox').val('');
-      $('.form__submit').prop('disabled', false);
+      $('.CommentContents__index').append(html);
+      $('.CommentContents__form--text').val('');
+      $('.CommentContents__form--submit').prop('disabled', false);
     })
     .fail(function(){
       alert('error');

@@ -1,0 +1,53 @@
+.PostForm {
+  height: 100%;
+  &__textarea{
+    height: 300px;
+    width: 100%;
+    font-size: 20px;
+    border-style: none;
+  }
+  &__buttons{
+    display: flex;
+    justify-content: flex-end;
+    &__image{
+      cursor: pointer;
+      margin-right: 15px;
+      .imageIcon{
+        font-size: 40px;
+      }
+      .Hidden{}
+      input {
+        display: none;
+      }
+    }
+    .tagIcon{
+      cursor: pointer;
+      font-size: 34px;
+    }
+  }
+  &__submit{
+    cursor: pointer;
+    margin-left: 30px;
+    font-size: 30px;
+    padding: 0 10px;
+  }
+}
+
+.PostFormBox {
+  background-color: lightgray;
+  border: 1px solid black;
+  height: 500px;
+  padding: 0 5px;
+  @include timeline_size;
+  .UserInfo {
+    &--image {
+    }
+    &__nameBox {
+      display: flex;
+      font-size: 20px;
+      &--name {
+        margin-right: 5px;
+      }
+    }
+  }
+}

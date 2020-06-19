@@ -1,5 +1,25 @@
 .TaskIndex{
-  width: 300px;
+  width: 400px;
+  height: 50vh;
+  padding: 1px 5px;
+  &__header {
+    display: flex;
+    outline: 1px solid black;
+    background-color: gray;
+    height: 50px;
+    line-height: 50px;
+    color: white;
+    #ToDoTitle {
+      font-size: 20px;
+      font-weight: bold;
+      margin-left: 10px;
+    }
+    a {
+      color: white;
+      font-size: 18px;
+      margin-left: 30px;
+    }
+  }
 }
 
 .TaskTitle {
@@ -7,15 +27,37 @@
   cursor: pointer;
 }
 
-#TaskShowTable {
-  display: flex;
+.TaskContent {
+  margin: 1px 0;
+  outline: 1px solid black;
+  background-color: lightgray;
+  height: calc(50vh - 54px);
+  overflow: scroll;
+  .TaskBox {
+    padding: 5px 10px;
+  }
 }
 
-#ToDoTitle {
-  font-size: 35px;
-  font-weight: bold;
+.TaskShow {
+  a {
+    color: black;
+  }
+  &__detail {
+    display: inline;
+    cursor: pointer;
+  }
+  &__description {
+    display: none;
+    white-space: pre-wrap;
+  }
 }
 
 .line-through {
   text-decoration: line-through;
+}
+
+.TaskMotivate {
+  background-color: darkgray;
+  height: calc(100vh - 160px);
+  width: calc(100vw - 100px);
 }
