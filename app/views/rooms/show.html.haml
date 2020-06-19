@@ -6,7 +6,7 @@
   .MessageField
     - if @messages.present?
       - @messages.each do |m|
-        .MessageBox
+        .MessageBox{data: {message: {id: m.id}}}
           - if m.user == current_user
             .MessageBox__current
               .MessageBox__current--flex
@@ -42,3 +42,5 @@
   = render 'tasks/index'
   .Notification
     何か
+
+

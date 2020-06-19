@@ -1,10 +1,10 @@
 - if user_signed_in? && current_user.id != post.user_id
   - if post.favorited_by?(current_user)
     %span
-    = link_to post_favorites_path(post.id), method: :delete do
+    = link_to post_favorites_path(post.id), method: :delete, remote: true do
       = icon('fas', 'star', class: 'unFavoriteIcon')
   - else
     %span
-    = link_to post_favorites_path(post.id), method: :post do
+    = link_to post_favorites_path(post.id), method: :post, remote: true do
       = icon('far', 'star', class: 'FavoriteIcon')
   = post.favorites.count
