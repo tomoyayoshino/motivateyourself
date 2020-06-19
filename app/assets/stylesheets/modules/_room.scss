@@ -1,0 +1,26 @@
+.Message {
+  // @include timeline_size;
+  // padding: 1px 5px;
+  // margin: 1px 0;
+}
+
+.MessageHeader {
+
+}
+
+.MessageField {
+  height: calc(100vh - 200px);
+  overflow: scroll;
+}
+
+.MessageForm {
+  &__form {
+    display: flex;
+  }
+  &__contents {
+
+  }
+}
+.Hidden {
+  display: none;
+}
