@@ -1,0 +1,2 @@
+:erb
+  $('.ContentBox__actionBar--favorite--<%= @post.id %>').html("<%= j(render partial: 'posts/favorite', locals: {post: @post}) %>");

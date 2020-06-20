@@ -24,7 +24,7 @@
           = link_to tag, posts_path(tag_name: tag), class: "PosttBox__tags--tag"
     .PostBox__actionBar
       = @post.created_at.strftime("%Y-%m-%d %H:%M:%S")
-      .PostBox__actionBar--favorite
+      %div{class: "ContentBox__actionBar--favorite--#{@post.id}"}
         = render partial: "posts/favorite", locals: { post: @post }
       - if user_signed_in? && current_user.id == @post.user_id
         = link_to '編集', edit_post_path(@post.id), method: :get, class: "PostBox__actionBar--edit"
