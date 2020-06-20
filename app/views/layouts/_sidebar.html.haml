@@ -4,7 +4,6 @@
     = current_user.name
     = link_to 'Profile', "/users/#{current_user.id}", class:".SideBar__list"
     = link_to 'Post', new_post_path, class:".SideBar__list"
-    = link_to 'Notification', '#', class:".SideBar__list"
     = link_to 'Logout', destroy_user_session_path, method: :delete
   - else 
     = link_to 'ログイン', new_user_session_path, class:".SideBar__list"
