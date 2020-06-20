@@ -38,9 +38,4 @@
         = f.hidden_field :room_id, value: @room.id
         %br/
       = f.submit "投稿する", class: "MessageForm__submit"
-.rightBar
-  = render 'tasks/index'
-  .Notification
-    何か
-
-
+= render "layouts/rightbar"

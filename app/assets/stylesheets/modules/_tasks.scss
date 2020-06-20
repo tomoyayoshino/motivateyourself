@@ -23,6 +23,8 @@
 }
 
 .TaskTitle {
+  font-weight: bold;
+  color: #211917;
   font-size: 20px;
   cursor: pointer;
 }
@@ -41,10 +43,13 @@
 .TaskShow {
   a {
     color: black;
+    cursor: pointer;
+    font-style:italic;
   }
   &__detail {
     display: inline;
     cursor: pointer;
+    font-style:italic;
   }
   &__description {
     display: none;
