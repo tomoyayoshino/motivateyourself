@@ -1,0 +1,13 @@
+.UserIndex
+  .UserIndex__header
+    %p ユーザー一覧
+  .UserIndex__main
+    - @users.each do |user|
+      .UserIndexBox
+        .UserIndexBox__info
+          .UserIndexBox__info--icon
+            = image_tag user.image.url, size: '50x50'
+          .UserIndexBox__info--name
+            =link_to "#{user.name}", "/users/#{user.id}"
+        .UserIndexBox__user= text_url_to_link(h(user.profile)).html_safe
+= render "layouts/rightbar"

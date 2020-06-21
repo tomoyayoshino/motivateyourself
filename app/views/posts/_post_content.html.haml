@@ -22,7 +22,11 @@
     - if user_signed_in? && current_user.id == post.user_id
       .ContentBox__actionBar--edit
         = link_to '編集', edit_post_path(post.id), method: :get
-    %div{class: "ContentBox__actionBar--favorite--#{post.id}"}
-      = render partial: "posts/favorite", locals: { post: post }
-    .ContentBox__actionBar--detail
+      .ContentBox__actionBar--detail
       = link_to '詳細', post_path(post.id), method: :get
+    - else
+      %div{class: "ContentBox__actionBar--favorite--#{post.id}"}
+        = render partial: "posts/favorite", locals: { post: post }
+      .ContentBox__actionBar--detail
+        = link_to post_path(post.id), method: :get do
+          =icon('fas', 'comment', class: 'ContentBox__actionBar--detail--icon')

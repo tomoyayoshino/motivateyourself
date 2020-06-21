@@ -11,6 +11,9 @@
     = link_to  new_post_path, class:"SideBar__list" do
       = icon('fas', 'paper-plane')
       Post
+    = link_to  users_path, class:"SideBar__list" do
+      = icon('fas', 'users')
+      Users
     = link_to destroy_user_session_path, method: :delete, class:"SideBar__list" do
       = icon('fas', 'sign-out-alt')
       Logout

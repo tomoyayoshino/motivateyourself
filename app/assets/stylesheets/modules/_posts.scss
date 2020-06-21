@@ -68,6 +68,11 @@
       &__actionBar{
         display: flex;
         justify-content: space-around;
+        &--detail {
+          &--icon {
+            color: black;
+          }
+        }
       }
     }
   }
