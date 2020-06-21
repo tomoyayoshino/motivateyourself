@@ -19,6 +19,9 @@ Rails.application.routes.draw do
       get 'follows'
       get 'followers'
     end
+    collection do
+      get 'search'
+    end
   end
 
   resources :messages, only: :create
