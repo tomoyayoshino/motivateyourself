@@ -68,8 +68,17 @@
       font-weight: bold;
     }
   }
+  &__search {
+    .UserSearchForm {
+      padding: 5px 0;
+      .UserSearchInput {
+        width: 100%;
+        background-color: #f0f0f0;
+      }
+    }
+  }
   &__main {
-    height: calc(100vh - 53px);
+    height: calc(100vh - 90px);
     overflow: scroll;
     padding: 0 1px 1px 1px;
     .UserIndexBox {
@@ -82,7 +91,7 @@
           padding-left: 5px;
         }
       }
-      &__user {
+      p {
         white-space: pre-wrap;
       }
     }

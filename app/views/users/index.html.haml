@@ -1,6 +1,9 @@
 .UserIndex
   .UserIndex__header
     %p ユーザー一覧
+  .UserIndex__search
+    = form_with(url: search_users_path, local: true, method: :get, class: "UserSearchForm") do |form|
+      = form.text_field :keyword, placeholder: "プロフィールを検索", class: "UserSearchInput"
   .UserIndex__main
     - @users.each do |user|
       .UserIndexBox
@@ -9,5 +12,5 @@
             = image_tag user.image.url, size: '50x50'
           .UserIndexBox__info--name
             =link_to "#{user.name}", "/users/#{user.id}"
-        .UserIndexBox__user= text_url_to_link(h(user.profile)).html_safe
+        %p.UserIndexBox__user= text_url_to_link(h(user.profile)).html_safe
 = render "layouts/rightbar"
