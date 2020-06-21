@@ -5,4 +5,16 @@
   flex-direction: column;
   background-color: lightgrey;
   height: 100vh;
+  &__icon {
+    margin: 10px 0 5px 0;
+  }
+  &__name {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  &__list {
+    font-size: 20px;
+    color: #222222;
+    margin-bottom: 8px;
+  }
 }

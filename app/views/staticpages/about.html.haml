@@ -1,14 +1,24 @@
 .About
+  .About__title
+    %p What is Motivate Yourself？
 
-  %p SNSによる交流 X チャットによる指導 X タスク管理による効率的な学習
+  .About__contents
+    .About__contents--concept
+      %p SNS交流 X チャット指導 X 効率学習
 
-  %p 現在、世の中には素晴らしい教材がたくさんあります。
-  %p しかし、
-  %p プログラミングの学習で難しいのは、
-  %p 継続とモチベーション維持だと思います。
+    .About__contents--suggestion1
+      %p 現在、世の中には素晴らしい教材がたくさんあります。
+      %p しかし、実際に
+      %p プログラミングの学習で難しいのは、
+      %p 継続とモチベーション維持だと思います。
+    .About__contents--suggestion2
+      %p 自分の作ったアプリやコードが正しいのか。
+      %p 他の方に見てもらいたいことはありませんか？
 
-  %p 自分の作ったアプリやコードが正しいのか。
-  %p 他の方に見てもらいたいことはありませんか？
-  
-  %h1 このアプリケーションでは、
-  %h1 交流・指導・学習の3つの軸であなたのプログラミング学習を支えます。
+    .About__contents--start
+      %h1 このアプリケーションでは、
+      %h1 交流・指導・管理の3つの軸であなたのプログラミング学習を支えます。
+      - unless user_signed_in?
+        %h1 下のリンクから今すぐ始めましょう！
+        = link_to new_user_registration_path do
+          %span signup

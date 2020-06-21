@@ -1,12 +1,29 @@
 .SideBar
   - if user_signed_in?
-    = link_to image_tag(current_user.image.url, size: '80x80'), root_path
-    = current_user.name
-    = link_to 'Profile', "/users/#{current_user.id}", class:".SideBar__list"
-    = link_to 'Post', new_post_path, class:".SideBar__list"
-    = link_to 'Logout', destroy_user_session_path, method: :delete
+    = link_to image_tag(current_user.image.url, size: '100x100'), root_path, class: "SideBar__icon"
+    .SideBar__name= current_user.name
+    = link_to root_path, class:"SideBar__list" do
+      = icon('fas', 'home')
+      Home
+    = link_to "/users/#{current_user.id}", class:"SideBar__list" do
+      = icon('fas', 'user-circle')
+      Profile
+    = link_to  new_post_path, class:"SideBar__list" do
+      = icon('fas', 'paper-plane')
+      Post
+    = link_to destroy_user_session_path, method: :delete, class:"SideBar__list" do
+      = icon('fas', 'sign-out-alt')
+      Logout
   - else 
-    = link_to 'ログイン', new_user_session_path, class:".SideBar__list"
-    = link_to '新規登録', new_user_registration_path, class:".SideBar__list"
-  = link_to 'About', '/about', class:".SideBar__list"
-  = link_to 'Help', '/help', class:".SideBar__list"
+    = link_to new_user_session_path, class:"SideBar__list" do
+      = icon('fas', 'sign-in-alt')
+      ログイン
+    = link_to new_user_registration_path, class:"SideBar__list" do
+      = icon('fas', 'user-plus')
+      新規登録
+  = link_to '/about', class:"SideBar__list" do
+    = icon('fas', 'info')
+    About
+  = link_to '/help', class:"SideBar__list" do
+    = icon('fas', 'question')
+    Help
