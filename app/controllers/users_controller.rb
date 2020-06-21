@@ -6,7 +6,6 @@ class UsersController < ApplicationController
 
   def edit
     user = User.find(params[:id])
-    @image = user.image
   end
 
   def update
@@ -19,10 +18,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @name = @user.name
     @posts = @user.posts.order("created_at DESC")
-    @image = @user.image
-    @profile = @user.profile
     @favorite_posts = @user.favorite_posts.order("created_at DESC")
     # DM機能
     @currentUserEntry=Entry.where(user_id: current_user.id)

@@ -2,12 +2,12 @@
   .Profile
     .ProfileBox
       .ProfileBox__icon
-        -if @image.present?
-          = image_tag @image.url, size: '100x100'
+        -if @user.image.present?
+          = image_tag @user.image.url, size: '100x100'
       .ProfileBox__info
         .ProfileBox__info__nameBox
           .ProfileBox__info__nameBox--name
-            = @name
+            = @user.name
           .ProfileBox__info__nameBox--btn
             - if current_user != @user
               - if @user.followed_by?(current_user)
@@ -15,7 +15,7 @@
               - else
                 = link_to "フォローする", user_relationships_path(@user.id), method: :post
         .ProfileBox__info--text
-          %p= text_url_to_link(h(@profile)).html_safe
+          %p= text_url_to_link(h(@user.profile)).html_safe
     .Profile__actionBar
       - if user_signed_in? && current_user.id == @user.id
         = link_to 'プロフィール編集', edit_user_registration_path(current_user)
