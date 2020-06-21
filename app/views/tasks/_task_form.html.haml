@@ -1,5 +1,5 @@
 .TaskForm
-  %div
+  .TaskForm__main
     = form_with(model: @task, local: true) do |f|
       %div
         %p= f.label :title, 'タスク名'
@@ -8,6 +8,5 @@
         %p= f.label :description, '詳細'
         = f.text_area :description
       = f.submit 'Submit'
-  %p= link_to '一覧に戻る', root_path
-  .TaskMotivate
-    偉人の名言とかそれっぽい画像
+    .TaskMotivate
+      偉人の名言とかそれっぽい画像

@@ -14,7 +14,4 @@
         = icon('far', 'image', class: 'imageIcon')
         = f.file_field :image, class: 'Hidden'
       = f.submit 'SEND', class: 'PostForm__submit'
-.rightBar
-  = render 'tasks/index'
-  .Notification
-    何か
+= render "layouts/rightbar"

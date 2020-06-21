@@ -1,0 +1,18 @@
+.Timer
+  .Timer__header
+    #TimerTitle タイマー
+  .Timer__contents
+    %form{name: "timer"}
+      .Timer__contents__form
+        .Timer__contents__form--minutes
+          %input{type: "text", value: "", class: "Timer__contents__form--time"}
+          %span 分
+        .Timer__contents__form--seconds
+          %input{type: "text", value: "", class: "Timer__contents__form--time"}
+          %span 秒
+      .Timer__contents__button
+        %input{onclick: "cntStart()", type: "button", value: "スタート", }
+        %input{onclick: "cntStop()", type: "button", value: "ストップ"}
+      .Timer__contents__message
+        %p 時間を区切って休憩の時間を取り
+        %p 効率の良い学習をしましょう

@@ -1,6 +1,6 @@
 .TaskIndex{
   width: 400px;
-  height: 50vh;
+  height: 60vh;
   padding: 1px 5px;
   &__header {
     display: flex;
@@ -23,6 +23,8 @@
 }
 
 .TaskTitle {
+  font-weight: bold;
+  color: #211917;
   font-size: 20px;
   cursor: pointer;
 }
@@ -31,7 +33,7 @@
   margin: 1px 0;
   outline: 1px solid black;
   background-color: lightgray;
-  height: calc(50vh - 54px);
+  height: calc(60vh - 54px);
   overflow: scroll;
   .TaskBox {
     padding: 5px 10px;
@@ -41,10 +43,13 @@
 .TaskShow {
   a {
     color: black;
+    cursor: pointer;
+    font-style:italic;
   }
   &__detail {
     display: inline;
     cursor: pointer;
+    font-style:italic;
   }
   &__description {
     display: none;
@@ -56,8 +61,16 @@
   text-decoration: line-through;
 }
 
+.TaskForm {
+  display: flex;
+  &__main{
+    @include timeline_size;
+    padding: 1px 5px;
+  }
+}
+
 .TaskMotivate {
   background-color: darkgray;
-  height: calc(100vh - 160px);
-  width: calc(100vw - 100px);
+  height: calc(100vh - 174px);
+  margin-top: 10px;
 }

@@ -45,7 +45,4 @@
         .Timeline__main
           - @favorite_posts.each do |post|
             = render "posts/post_content", { post: post }
-.rightBar
-  = render 'tasks/index'
-  .Notification
-    何か
+= render "layouts/rightbar"

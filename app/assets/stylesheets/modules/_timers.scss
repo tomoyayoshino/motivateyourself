@@ -1,0 +1,52 @@
+.Timer {
+  width: 400px;
+  height: 40vh;
+  padding: 1px 5px;
+  &__header{
+    outline: 1px solid black;
+    background-color: gray;
+    height: 50px;
+    line-height: 50px;
+    color: white;
+    #TimerTitle {
+      font-size: 20px;
+      font-weight: bold;
+      margin-left: 10px;
+    }
+  }
+  &__contents {
+    margin: 1px 0;
+    outline: 1px solid black;
+    background-color: lightgray;
+    height: calc(40vh - 54px);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    &__form {
+      display: flex;
+      justify-content: center;
+      padding: 50px 20px 20px 20px;
+      &--time{
+        width: 50%;
+      }
+      &--minutes {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+      }
+      &--seconds {
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
+      }
+    }
+    &__button{
+      display: flex;
+      justify-content: center;
+    }
+    &__message {
+      text-align: center;
+      margin-top: 20px;
+    }
+  }
+}

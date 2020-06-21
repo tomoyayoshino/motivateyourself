@@ -31,7 +31,7 @@
     }
   }
   &__main {
-    height: calc(100vh - 50px);
+    height: calc(100vh - 90px);
     overflow: scroll;
     .ContentBox{
       margin-top: 5px;
@@ -75,6 +75,13 @@
 .Timeline {
   @include timeline_format;
   height: 100vh;
+}
+
+.search-form {
+  padding: 5px 0;
+  .search-input {
+    width: 100%;
+  }
 }
 
 .FavoriteIcon {
