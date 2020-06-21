@@ -1,6 +1,8 @@
 .SideBar
   - if user_signed_in?
-    = link_to image_tag(current_user.image.url, size: '100x100'), root_path, class: "SideBar__icon"
+    -# = link_to image_tag(current_user.image.url, size: '100x100'), root_path, class: "SideBar__icon"
+    = link_to root_path, class: "SideBar__icon" do
+      = image_tag 'MYLogo.png', size: '80x80'
     .SideBar__name= current_user.name
     = link_to root_path, class:"SideBar__list" do
       = icon('fas', 'home')
