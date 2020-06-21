@@ -61,8 +61,16 @@
   text-decoration: line-through;
 }
 
+.TaskForm {
+  display: flex;
+  &__main{
+    @include timeline_size;
+    padding: 1px 5px;
+  }
+}
+
 .TaskMotivate {
   background-color: darkgray;
-  height: calc(100vh - 160px);
-  width: calc(100vw - 100px);
+  height: calc(100vh - 174px);
+  margin-top: 10px;
 }
