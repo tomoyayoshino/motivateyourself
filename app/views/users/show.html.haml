@@ -28,8 +28,12 @@
               = fields_for @entry do |e|
                 = e.hidden_field :user_id, value: @user.id
               = f.submit "チャットを始める"
-      = link_to "following", follows_user_path(@user.id), class:"Profile__actionBar--follow"
-      = link_to "followers", followers_user_path(@user.id), class:"Profile__actionBar--follow"
+      .Profile__actionBar--following
+        = @user.followings.count
+        = link_to "Following", follows_user_path(@user.id), class:"Profile__actionBar--follow"
+      .Profile__actionBar--follower
+        = @user.followers.count
+        = link_to "Followers", followers_user_path(@user.id), class:"Profile__actionBar--follow"
 
   .UserShow__contents
     .UserShow__header
