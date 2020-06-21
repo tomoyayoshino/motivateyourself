@@ -11,7 +11,7 @@
 }
 
 .Profile {
-  background-color: darkgray;
+  background-color: #BBBBBB;
   outline: 1px solid black;
   height: 200px;
   padding: 5px;
@@ -52,6 +52,43 @@
   height: calc(100vh - 230px);
   overflow: scroll;
 }
+
+.UserIndex {
+  padding: 1px 3px;
+  @include timeline_size;
+  &__header {
+    outline: 1px solid black;
+    background-color: darkgray;
+    height: 50px;
+    line-height: 50px;
+    color: white;
+    p {
+      font-size: 18px;
+      margin-left: 10px;
+      font-weight: bold;
+    }
+  }
+  &__main {
+    height: calc(100vh - 53px);
+    overflow: scroll;
+    padding: 0 1px 1px 1px;
+    .UserIndexBox {
+      outline: 1px solid black;
+      margin-top: 3px;
+      &__info {
+        display: flex;
+        line-height: 50px;
+        &__name {
+          padding-left: 5px;
+        }
+      }
+      &__user {
+        white-space: pre-wrap;
+      }
+    }
+  }
+}
+
 
 // js用
 .userShowTabs {

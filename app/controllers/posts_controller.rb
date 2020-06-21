@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :move_to_index, except: [:index, :show, :search]
 
   def index
-    @posts = Post.includes(:user).order("created_at DESC")
+    @posts = Post.includes(:user).order("created_at DESC").limit(100)
     if params[:tag_name]
       @posts = Post.tagged_with("#{params[:tag_name]}").order("created_at DESC")
     end
@@ -14,7 +14,11 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(post_params)
-    redirect_to root_path
+    if @post.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   def destroy
@@ -40,7 +44,7 @@ class PostsController < ApplicationController
   end
 
   def search
-    @posts = Post.search(params[:keyword]).order("created_at DESC")
+    @posts = Post.search(params[:keyword]).order("created_at DESC").limit(100)
     respond_to do |format|
       format.html
       format.json
