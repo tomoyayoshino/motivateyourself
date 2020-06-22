@@ -1,20 +1,31 @@
 .SideBar {
   min-width: 200px;
+  background-color: lightgrey;
+  height: 100vh;
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-color: lightgrey;
-  height: 100vh;
   &__icon {
     margin: 10px 0 5px 0;
   }
+  &__info {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 2px;
+    margin: 0 8px 8px 8px;
+  }
   &__name {
     font-size: 24px;
-    margin-bottom: 10px;
+    margin-left: 4px;
   }
   &__list {
     font-size: 20px;
     color: #222222;
     margin-bottom: 8px;
+    &--notice{
+      color: red;
+      font-weight: bold;
+    }
   }
 }

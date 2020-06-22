@@ -42,8 +42,12 @@
     display: flex;
     position: absolute;
     bottom: 3px;
-    &--follow {
-      margin-left: 100px;
+    font-weight: bold;
+    &--following {
+      margin-left: 90px;
+    }
+    &--follower {
+      margin-left: 90px;
     }
   }
 }

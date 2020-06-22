@@ -5,9 +5,9 @@
       = render "devise/shared/error_messages", resource: resource
       .field
         = f.label :name
-        %em (8文字以内で入力)
+        %em (10文字以内で入力)
         %br/
-        = f.text_field :name, autofocus: true, autocomplete: "name", maxlength: "8", class: "DeviseWidth"
+        = f.text_field :name, autofocus: true, autocomplete: "name", maxlength: "10", class: "DeviseWidth"
 
 
       .field
