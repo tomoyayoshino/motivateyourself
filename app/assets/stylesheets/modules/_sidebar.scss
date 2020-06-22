@@ -16,5 +16,9 @@
     font-size: 20px;
     color: #222222;
     margin-bottom: 8px;
+    &--notice{
+      color: red;
+      font-weight: bold;
+    }
   }
 }

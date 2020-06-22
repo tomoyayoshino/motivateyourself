@@ -1,6 +1,5 @@
 .SideBar
   - if user_signed_in?
-    -# = link_to image_tag(current_user.image.url, size: '100x100'), root_path, class: "SideBar__icon"
     = link_to root_path, class: "SideBar__icon" do
       = image_tag 'MYLogo.png', size: '80x80'
     .SideBar__name= current_user.name
@@ -13,6 +12,19 @@
     = link_to  new_post_path, class:"SideBar__list" do
       = icon('fas', 'paper-plane')
       Post
+    - if unchecked_notifications.any?
+      = link_to notifications_path, class: "SideBar__list SideBar__list--notice" do
+        = icon('fas', 'bell')
+        Notice
+    - else
+      = link_to notifications_path, class: "SideBar__list" do
+        = icon('fas', 'bell')
+        Notice
+
+    -# - if unchecked_notifications.any?
+    -#   =icon('fas', 'circle')
+    -# %li
+    -#   = link_to "Notice", notifications_path, class: "btn-default"
     = link_to  users_path, class:"SideBar__list" do
       = icon('fas', 'users')
       Users
