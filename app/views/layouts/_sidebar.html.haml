@@ -2,7 +2,7 @@
   - if user_signed_in?
     = link_to root_path, class: "SideBar__icon" do
       = image_tag 'MYLogo.png', size: '80x80'
-    .SideBar__info
+    = link_to "/users/#{current_user.id}", class:"SideBar__info" do
       =image_tag current_user.image.url, size: '32x32'
       .SideBar__name= current_user.name
     = link_to root_path, class:"SideBar__list" do
