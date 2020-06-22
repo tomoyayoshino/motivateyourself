@@ -2,7 +2,9 @@
   - if user_signed_in?
     = link_to root_path, class: "SideBar__icon" do
       = image_tag 'MYLogo.png', size: '80x80'
-    .SideBar__name= current_user.name
+    .SideBar__info
+      =image_tag current_user.image.url, size: '32x32'
+      .SideBar__name= current_user.name
     = link_to root_path, class:"SideBar__list" do
       = icon('fas', 'home')
       Home
@@ -20,11 +22,6 @@
       = link_to notifications_path, class: "SideBar__list" do
         = icon('fas', 'bell')
         Notice
-
-    -# - if unchecked_notifications.any?
-    -#   =icon('fas', 'circle')
-    -# %li
-    -#   = link_to "Notice", notifications_path, class: "btn-default"
     = link_to  users_path, class:"SideBar__list" do
       = icon('fas', 'users')
       Users
