@@ -1,24 +1,24 @@
-# README
+# アプリケーション概要
+SNS、チャットを通じた学習モチベーション維持アプリ
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# 機能一覧
+ユーザー機能
+投稿機能
+通知機能
+検索機能
+タグ機能
+コメント機能
+お気に入り機能
+フォロー機能
+メッセージ機能
+タスク管理機能
+簡易タイマー
 
-Things you may want to cover:
+# 技術一覧
+## 使用言語
+Ruby
+Rails
+haml
+scss
+jQuery
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
