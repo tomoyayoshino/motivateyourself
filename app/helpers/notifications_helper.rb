@@ -3,16 +3,13 @@ module NotificationsHelper
   def notification_form(notification)
     @visiter = notification.visiter
     @comment = nil
-    your_post = link_to 'あなたの投稿', users_path(notification), style:"font-weight: bold;"
-    # @visiter_comment = notification.comment_id
-    #notification.actionがfollowかfavoriteかcommentかmessageか
+    your_post = link_to 'あなたの投稿', user_path(notification), style:"font-weight: bold;"
     case notification.action
       when "follow" then
         tag.a(notification.visiter.name, href:user_path(@visiter), style:"font-weight: bold;")+"さんがあなたをフォローしました"
       when "favorite" then
         tag.a(notification.visiter.name, href:user_path(@visiter), style:"font-weight: bold;")+"さんが"+tag.a('あなたの投稿', href:post_path(notification.post_id), style:"font-weight: bold;")+"にいいねしました"
       when "comment" then
-          # @comment = Comment.find_by(id: @visiter_comment)&.text
         tag.a(@visiter.name, href:user_path(@visiter), style:"font-weight: bold;")+"さんが"+tag.a('投稿', href:post_path(notification.post_id), style:"font-weight: bold;")+"にコメントしました"
       when "message" then
         tag.a(@visiter.name, href:user_path(@visiter), style:"font-weight: bold;")+"さんが"+tag.a('DM', href:room_path(notification.room_id), style:"font-weight: bold;")+"にメッセージを投稿しました"
