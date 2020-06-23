@@ -21,19 +21,23 @@
     &__info {
       position: relative;
       display: flex;
-      line-height: 100px;
+      // line-height: 100px;
       &--image {
         margin-right: 10px;
       }
       &--name {
-        font-size: 25px;
+        // font-size: 25px;
       }
       &--follow {
         position: absolute;
         right: 30px;
       }
     }
-    
+    &__text {
+      p{
+        white-space: pre-wrap;
+      }
+    }
   }
 }
 

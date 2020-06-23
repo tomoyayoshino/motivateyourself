@@ -12,7 +12,7 @@ class Room < ApplicationRecord
   end
 
 def save_notification_message!(current_user, message_id, visited_id)
-    # メッセージは複数回することが考えられるため、１つの投稿に複数回通知する
+    # メッセージは複数が考えられるため、１つの投稿に複数回通知する
     notification = current_user.active_notifications.new(
       room_id: id,
       message_id: message_id,

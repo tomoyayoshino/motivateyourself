@@ -2,7 +2,7 @@
   - @users.each do |user|
     .follows__Box
       .follows__Box__info
-        = image_tag user.image.url, size: '100x100', class: "follows__Box__info--image"
+        = image_tag user.image.url, size: '50x50', class: "follows__Box__info--image"
         = link_to user.name, user_path(user.id), class: "follows__Box__info--name"
         - if current_user != user
           - if user.followed_by?(current_user)
@@ -10,5 +10,5 @@
           - else
             %p= link_to "フォローする", user_relationships_path(user.id), method: :post, class:"follows__Box__info--follow"
       .follows__Box__text
-        = user.profile
+        %p= user.profile
 
