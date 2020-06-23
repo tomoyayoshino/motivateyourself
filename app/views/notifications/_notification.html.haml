@@ -1,10 +1,11 @@
-- visiter = notification.visiter
-- post = notification.post
-.user-view.clearfix
-  = link_to users_path(notification.visiter) do
-    = image_tag visiter.image.url, size: "50x50"
-  = notification_form(notification)
-  %span.moderate-font= " (#{time_ago_in_words(notification.created_at)} 前)"
-  %br/
-  - if !@comment.nil?
-    %p.moderate-font.text-center{style: "color: #C0C0C0;"}= @comment
+.NoticeIndex
+  - visiter = notification.visiter
+  - post = notification.post
+  .NoticeIndex__box
+    = link_to user_path(notification.visiter) do
+      = image_tag visiter.image.url, size: "30x30"
+    = notification_form(notification)
+    %span.moderate-font= " (#{time_ago_in_words(notification.created_at)}前)"
+    %br/
+    -# - if !@comment.nil?
+    -#   %p.NoticeIndex__box--comment= @comment

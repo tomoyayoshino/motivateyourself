@@ -7,7 +7,9 @@ class MessagesController < ApplicationController
       respond_to do |format|
         format.json
       end
-      # redirect_to "/rooms/#{@message.room_id}"
+      @message.user_id = current_user.id
+      @message_room = @message.room
+      @message_room.create_notification_message!(current_user, @message.id)
     else
       redirect_back(fallback_location: root_path)
     end

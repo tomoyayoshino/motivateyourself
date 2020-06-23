@@ -22,6 +22,9 @@
       %div{class: "ContentBox__actionBar--favorite--#{@post.id}"}
         = render partial: "posts/favorite", locals: { post: @post }
       - if user_signed_in? && current_user.id == @post.user_id
+        .Postshow__fav
+          = icon('fas', 'star', class: 'unFavoriteIcon')
+          = @post.favorites.count
         = link_to '編集', edit_post_path(@post.id), method: :get, class: "PostBox__actionBar--edit"
         = link_to '削除', post_path(@post.id), method: :delete, class: "PostBox__actionBar--delete"
   -# コメント用のビューです---------------------------
