@@ -1,4 +1,5 @@
 # アプリケーション概要
+Motivate Yourself
 SNS、チャットを通じた学習モチベーション維持アプリ
 
 # 機能一覧
@@ -18,7 +19,7 @@ SNS、チャットを通じた学習モチベーション維持アプリ
 ## 使用言語
 Ruby
 Rails
-haml
-scss
+Haml
+Scss
 jQuery
 
