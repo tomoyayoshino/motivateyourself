@@ -29,7 +29,6 @@ RSpec.describe Message, type: :model do
         message.valid?
         expect(message.errors[:room]).to include("を入力してください")
       end
-
     end
   end
 end
