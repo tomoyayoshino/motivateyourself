@@ -16,5 +16,39 @@ describe User do
       user.valid?
       expect(user.errors[:image]).to include("を入力してください")
     end
+    it "passwordにバリデーションが適用されていること" do
+      user = build(:user, password: nil)
+      user.valid?
+      expect(user.errors[:password]).to include("を入力してください")
+    end
+    it "passwordが存在してもpassword_confirmationが必須であること" do
+      user = build(:user, password_confirmation: "")
+      user.valid?
+      expect(user.errors[:password_confirmation]).to include("とパスワードの入力が一致しません")
+    end
+    it "重複したemailでは登録できないこと" do
+      user = create(:user)
+      another_user = build(:user, email: user.email)
+      another_user.valid?
+      expect(another_user.errors[:email]).to include("はすでに存在します")
+    end
+    it "passwordが6文字以上であれば登録できること" do
+      user = build(:user, password: "000000", password_confirmation: "000000")
+      expect(user).to be_valid
+    end
+    it "passwordが5文字以下だと登録できないこと" do
+      user = build(:user, password: "00000", password_confirmation: "00000")
+      user.valid?
+      expect(user.errors[:password]).to include("は6文字以上で入力してください")
+    end
+    it "nameが11文字以上だと登録できないこと" do
+      user = build(:user, name: "abcdefghijk")
+      user.valid?
+      expect(user.errors[:name]).to include("は10文字以内で入力してください")
+    end
+    it "nameが10文字以下なら登録できること" do
+      user = build(:user, name: "abcdefghij")
+      expect(user).to be_valid
+    end
   end
 end
