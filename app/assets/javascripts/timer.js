@@ -1,21 +1,17 @@
-let timer1; //タイマーを格納する変数（タイマーID）の宣言
+let timer1;
 
-
-//カウントダウン関数を1000ミリ秒毎に呼び出す関数
 function cntStart()
 {
   document.timer.elements[2].disabled=true;
   timer1=setInterval("countDown()",1000);
 }
 
-//タイマー停止関数
 function cntStop()
 {
   document.timer.elements[2].disabled=false;
   clearInterval(timer1);
 }
 
-//カウントダウン関数
 function countDown()
 {
   let min=document.timer.elements[0].value;
@@ -38,7 +34,6 @@ function countDown()
   }
 }
 
-//残り時間を書き出す関数
 function tmWrite(int)
 {
   int=parseInt(int);
@@ -50,14 +45,11 @@ function tmWrite(int)
   }
   else
   {
-    //残り分数はintを60で割って切り捨てる
     document.timer.elements[0].value=Math.floor(int/60);
-    //残り秒数はintを60で割った余り
     document.timer.elements[1].value=int % 60;
   }
 }
 
-//フォームを初期状態に戻す（リセット）関数
 function reSet()
 {
   document.timer.elements[0].value="0";

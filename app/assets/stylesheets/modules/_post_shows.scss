@@ -35,8 +35,6 @@
     &__actionBar {
       display: flex;
       justify-content: space-around;
-      &--edit{}
-      &--delete{}
     }
   }
 }
@@ -69,8 +67,6 @@
       &--header{}
       &__box {
         display: flex;
-        &--text{}
-        &--name{}
       }
     }
   }
