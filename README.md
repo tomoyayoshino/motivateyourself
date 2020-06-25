@@ -1,6 +1,6 @@
 # アプリケーション概要
-Motivate Yourself
-SNS、チャットを通じた学習モチベーション維持アプリ
+- Motivate Yourself
+- SNS、チャットを通じた学習モチベーション維持アプリ
 
 # 機能一覧
 ユーザー機能、
@@ -17,7 +17,7 @@ DM機能、
 
 # 技術一覧
 ## 使用言語
-- Ruby ''2.6.5'
+- Ruby '2.6.5'
 - Rails '6.0.3'
 - Haml
 - SCSS
@@ -32,7 +32,7 @@ DM機能、
 - 'jquery-rails'
 - 'acts-as-taggable-on'
 - 'gon'
-
+- 'pry-rails'
 - 'faker'
 - 'factory_bot_rails'
 - 'rails-controller-testing'
