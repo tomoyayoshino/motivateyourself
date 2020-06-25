@@ -13,7 +13,7 @@ describe TasksController, type: :controller do
     end
   end
   describe 'GET #edit' do
-    it "@taskの値を確かめる" do
+    it "@taskの値を確かめること" do
       task = create(:task)
       get :edit, params: { id: task }
       expect(assigns(:task)).to eq task
