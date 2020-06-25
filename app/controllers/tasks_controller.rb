@@ -2,7 +2,7 @@ class TasksController < ApplicationController
   before_action :authenticate_user!
   
   def show
-    @task = target_task params[:id]
+    @task = Task.find(params[:id])
   end
 
   def new
@@ -16,7 +16,7 @@ class TasksController < ApplicationController
   end
   
   def edit
-    @task = target_task params[:id]
+    @task = Task.find(params[:id])
   end
 
   def update
