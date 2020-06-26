@@ -26,6 +26,7 @@ DM機能、
 - jQuery
 
 ## 使用gem
+### 開発
 - 'haml-rails'
 - 'font-awesome-sass'
 - 'carrierwave'
@@ -34,8 +35,16 @@ DM機能、
 - 'jquery-rails'
 - 'acts-as-taggable-on'
 - 'gon'
+### テスト
 - 'pry-rails'
+- 'rspec-rails'
 - 'faker'
 - 'factory_bot_rails'
 - 'rails-controller-testing'
-
+### デプロイ
+- 'capistrano'
+- 'capistrano-rbenv'
+- 'capistrano-bundler'
+- 'capistrano-rails'
+- 'capistrano3-unicorn'
+- 'unicorn'
