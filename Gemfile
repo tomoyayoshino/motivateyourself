@@ -67,3 +67,7 @@ gem 'devise'
 gem 'jquery-rails'
 gem 'acts-as-taggable-on', '~> 6.0'
 gem 'gon'
+
+group :production do
+  gem 'unicorn', '5.4.1'
+end
