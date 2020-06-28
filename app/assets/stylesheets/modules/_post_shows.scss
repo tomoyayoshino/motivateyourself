@@ -55,7 +55,9 @@
     }
     &__form {
       margin-left: 5px;
-      &--textarea{
+      &--text{
+        width: 98%;
+        height: 80px;
       }
       &--submit{
       }

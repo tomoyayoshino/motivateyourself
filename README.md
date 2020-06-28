@@ -18,14 +18,17 @@ DM機能、
 # 技術一覧
 - AWS,EC2,S3
 - Capistoranoを用いた自動デプロイ
+- データベース：MySQL (MariaDB)
 ## 使用言語
 - Ruby '2.6.5'
 - Rails '6.0.3'
 - Haml
 - SCSS
+- JavaScript
 - jQuery
 
 ## 使用gem
+### 開発
 - 'haml-rails'
 - 'font-awesome-sass'
 - 'carrierwave'
@@ -34,8 +37,16 @@ DM機能、
 - 'jquery-rails'
 - 'acts-as-taggable-on'
 - 'gon'
+### テスト
 - 'pry-rails'
+- 'rspec-rails'
 - 'faker'
 - 'factory_bot_rails'
 - 'rails-controller-testing'
-
+### デプロイ
+- 'capistrano'
+- 'capistrano-rbenv'
+- 'capistrano-bundler'
+- 'capistrano-rails'
+- 'capistrano3-unicorn'
+- 'unicorn'
