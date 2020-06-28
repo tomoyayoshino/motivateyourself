@@ -18,11 +18,13 @@ DM機能、
 # 技術一覧
 - AWS,EC2,S3
 - Capistoranoを用いた自動デプロイ
+- データベース：MySQL (MariaDB)
 ## 使用言語
 - Ruby '2.6.5'
 - Rails '6.0.3'
 - Haml
 - SCSS
+- JavaScript
 - jQuery
 
 ## 使用gem
