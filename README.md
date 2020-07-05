@@ -16,8 +16,8 @@ DM機能、
 簡易タイマー
 
 # テストアカウント
-- sample@user.com
-- motivateyourself
+- ID: sample@user.com
+- pass: motivateyourself
 
 # 制作意図
 自分がプログラミング学習をはじめた頃、中々成長している実感が得られず挫折しそうになっていました。
