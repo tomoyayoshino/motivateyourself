@@ -17,4 +17,8 @@
     .actions
       = f.submit "Log in"
   = render "devise/shared/links"
-  = link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post
+  = link_to users_guest_sign_in_path, method: :post do
+    .DeviseForms__guest
+      %p ゲストでログイン
+  -# .DeviseForms__guest
+  -#   %p= link_to 'ゲストでログイン', users_guest_sign_in_path, method: :post
