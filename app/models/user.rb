@@ -7,7 +7,7 @@ class User < ApplicationRecord
   validates :name, presence: true, uniqueness: {case_sensitive: true}, length: { maximum: 10 }
   validates :image, presence: true
   validates :profile, length: { maximum: 200 }
-  
+
   has_many :posts
   has_many :comments
   has_many :favorites
@@ -20,13 +20,20 @@ class User < ApplicationRecord
 
   has_many :messages, dependent: :destroy
   has_many :entries, dependent: :destroy
-  
+
   has_many :active_notifications, class_name: "Notification", foreign_key: "visiter_id", dependent: :destroy
   has_many :passive_notifications, class_name: "Notification", foreign_key: "visited_id", dependent: :destroy
 
   has_many :tasks, dependent: :destroy
-  
+
   mount_uploader :image, ImageUploader
+
+
+  def self.guest
+    find_by(email: 'sample@user.com') do |user|
+      user.password = motivateyourself
+    end
+  end
 
   def followed_by?(user)
     passive_relationships.find_by(following_id: user.id).present?

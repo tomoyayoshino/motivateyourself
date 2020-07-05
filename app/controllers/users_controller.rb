@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!, except: :new_guest
 
   def index
     @users = User.all
@@ -56,6 +57,12 @@ class UsersController < ApplicationController
       format.html
       format.json
     end
+  end
+
+  def new_guest
+    user = User.guest
+    sign_in user
+    redirect_to root_path
   end
 
   private
