@@ -19,7 +19,7 @@ function countDown()
   
   if( (min=="") && (sec=="") )
   {
-    alert("時刻を設定してください！");
+    alert("時間を設定してください");
     reSet();
   }
   else
@@ -41,7 +41,7 @@ function tmWrite(int)
   if (int<=0)
   {
     reSet();
-    alert("時間です！");
+    alert("時間になりました");
   }
   else
   {
