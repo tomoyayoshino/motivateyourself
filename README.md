@@ -50,7 +50,7 @@ DM機能、
 - 'jquery-rails'
 - 'acts-as-taggable-on'
 - 'gon'
-### テスト
+### テスト・デバッグ
 - 'pry-rails'
 - 'rspec-rails'
 - 'faker'
