@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :move_to_index, except: [:index, :show, :search]
+  before_action :move_to_index, except: [:index, :show]
 
   def index
     @posts = Post.includes(:user).order("created_at DESC").limit(255)
@@ -7,7 +7,7 @@ class PostsController < ApplicationController
       @posts = Post.tagged_with("#{params[:tag_name]}").order("created_at DESC")
     end
   end
-  
+
   def new
     @post = Post.new
   end

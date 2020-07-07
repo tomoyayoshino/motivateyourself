@@ -17,12 +17,12 @@
         .ProfileBox__info--text
           %p= text_url_to_link(h(@user.profile)).html_safe
     .Profile__actionBar
-      - if user_signed_in? && current_user.id == @user.id
+      - if user_signed_in? && current_user.id == @user.id && @user.email != "sample@user.com"
         = link_to 'プロフィール編集', edit_user_registration_path(current_user)
       - unless @user.id == current_user.id
         - if (current_user.followed_by? @user) && (@user.followed_by? current_user)
           - if @isRoom == true
-            = link_to 'チャットへ', "/rooms/#{@roomId}" 
+            = link_to 'チャットへ', "/rooms/#{@roomId}"
           - else
             = form_with(model: @room, local: true)  do |f|
               = fields_for @entry do |e|
