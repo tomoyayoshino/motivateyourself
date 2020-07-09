@@ -18,6 +18,7 @@ class Post < ApplicationRecord
   
   def self.search(search)
     return Post.includes(:user) unless search
+
     Post.where('content LIKE(?)', "%#{search}%")
   end
 

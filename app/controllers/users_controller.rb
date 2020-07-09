@@ -22,8 +22,8 @@ class UsersController < ApplicationController
     @posts = @user.posts.order("created_at DESC")
     @favorite_posts = @user.favorite_posts.order("created_at DESC")
     # DM機能
-    @currentUserEntry=Entry.where(user_id: current_user.id)
-    @userEntry=Entry.where(user_id: @user.id)
+    @currentUserEntry = Entry.where(user_id: current_user.id)
+    @userEntry = Entry.where(user_id: @user.id)
     if @user.id == current_user.id
     else
       @currentUserEntry.each do |cu|

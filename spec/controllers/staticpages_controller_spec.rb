@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 describe StaticpagesController, type: :controller do
-
   describe 'GET #about' do
     it "aboutアクションで正しくビューに遷移すること" do
       get :about

@@ -11,7 +11,7 @@ class Room < ApplicationRecord
     end
   end
 
-def save_notification_message!(current_user, message_id, visited_id)
+  def save_notification_message!(current_user, message_id, visited_id)
     notification = current_user.active_notifications.new(
       room_id: id,
       message_id: message_id,
