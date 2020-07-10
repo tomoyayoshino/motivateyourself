@@ -51,12 +51,13 @@ http://18.181.137.18/
 - 'jquery-rails'
 - 'acts-as-taggable-on'
 - 'gon'
-### テスト・デバッグ
+### テスト・デバッグ等
 - 'pry-rails'
 - 'rspec-rails'
 - 'faker'
 - 'factory_bot_rails'
 - 'rails-controller-testing'
+- 'rubocop'
 ### デプロイ
 - 'capistrano'
 - 'capistrano-rbenv'
