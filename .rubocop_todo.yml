@@ -6,40 +6,16 @@
 # Note that changes in the inspected code, or installation of new
 # versions of RuboCop, may require this file to be generated again.
 
-# Offense count: 2
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle, EnforcedStyleForEmptyBraces.
-# SupportedStyles: space, no_space, compact
-# SupportedStylesForEmptyBraces: space, no_space
-Layout/SpaceInsideHashLiteralBraces:
-  Exclude:
-    - 'app/models/user.rb'
-
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle.
-# SupportedStyles: space, no_space
-Layout/SpaceInsideParens:
-  Exclude:
-    - 'spec/controllers/posts_controller_spec.rb'
-
-# Offense count: 26
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle.
-# SupportedStyles: final_newline, final_blank_line
-Layout/TrailingEmptyLines:
-  Enabled: false
-
 # Offense count: 5
 # Cop supports --auto-correct.
 # Configuration parameters: AllowInHeredoc.
-Layout/TrailingWhitespace:
-  Exclude:
-    - 'app/controllers/favorites_controller.rb'
-    - 'app/helpers/application_helper.rb'
-    - 'app/models/post.rb'
-    - 'config/deploy.rb'
-    - 'spec/controllers/staticpages_controller_spec.rb'
+# Layout/TrailingWhitespace:
+#   Exclude:
+#     - 'app/controllers/favorites_controller.rb'
+#     - 'app/helpers/application_helper.rb'
+#     - 'app/models/post.rb'
+#     - 'config/deploy.rb'
+#     - 'spec/controllers/staticpages_controller_spec.rb'
 
 # Offense count: 1
 # Cop supports --auto-correct.

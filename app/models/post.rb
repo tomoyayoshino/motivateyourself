@@ -15,7 +15,7 @@ class Post < ApplicationRecord
   def followed_by?(user)
     passive_relationships.find_by(following_id: user.id).present?
   end
-  
+
   def self.search(search)
     return Post.includes(:user) unless search
 
