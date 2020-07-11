@@ -6,17 +6,6 @@
 # Note that changes in the inspected code, or installation of new
 # versions of RuboCop, may require this file to be generated again.
 
-# Offense count: 5
-# Cop supports --auto-correct.
-# Configuration parameters: AllowInHeredoc.
-# Layout/TrailingWhitespace:
-#   Exclude:
-#     - 'app/controllers/favorites_controller.rb'
-#     - 'app/helpers/application_helper.rb'
-#     - 'app/models/post.rb'
-#     - 'config/deploy.rb'
-#     - 'spec/controllers/staticpages_controller_spec.rb'
-
 # Offense count: 1
 # Cop supports --auto-correct.
 Lint/NonDeterministicRequireOrder:
@@ -79,14 +68,6 @@ Style/ClassAndModuleChildren:
     - 'test/channels/application_cable/connection_test.rb'
     - 'test/test_helper.rb'
 
-# Offense count: 2
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle.
-# SupportedStyles: compact, expanded
-Style/EmptyMethod:
-  Exclude:
-    - 'app/controllers/staticpages_controller.rb'
-
 # Offense count: 1
 # Cop supports --auto-correct.
 Style/ExpandPathArguments:
@@ -110,26 +91,6 @@ Style/IfUnlessModifier:
 
 # Offense count: 1
 # Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyle.
-# SupportedStyles: require_parentheses, require_no_parentheses, require_no_parentheses_except_multiline
-Style/MethodDefParentheses:
-  Exclude:
-    - 'app/controllers/tasks_controller.rb'
-
-# Offense count: 1
-# Cop supports --auto-correct.
-Style/MultilineIfThen:
-  Exclude:
-    - 'app/controllers/users_controller.rb'
-
-# Offense count: 4
-# Cop supports --auto-correct.
-Style/MultilineWhenThen:
-  Exclude:
-    - 'app/helpers/notifications_helper.rb'
-
-# Offense count: 1
-# Cop supports --auto-correct.
 # Configuration parameters: PreferredDelimiters.
 Style/PercentLiteralDelimiters:
   Exclude:
@@ -141,32 +102,9 @@ Style/RedundantInterpolation:
   Exclude:
     - 'app/controllers/posts_controller.rb'
 
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: AllowMultipleReturnValues.
-Style/RedundantReturn:
-  Exclude:
-    - 'app/helpers/application_helper.rb'
-
 # Offense count: 9
 # Cop supports --auto-correct.
 # Configuration parameters: MinSize.
 # SupportedStyles: percent, brackets
 Style/SymbolArray:
   EnforcedStyle: brackets
-
-# Offense count: 3
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyleForMultiline.
-# SupportedStylesForMultiline: comma, consistent_comma, no_comma
-Style/TrailingCommaInArguments:
-  Exclude:
-    - 'spec/models/notification_spec.rb'
-
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: WordRegex.
-# SupportedStyles: percent, brackets
-Style/WordArray:
-  EnforcedStyle: percent
-  MinSize: 3
