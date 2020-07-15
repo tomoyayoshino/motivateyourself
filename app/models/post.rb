@@ -15,9 +15,10 @@ class Post < ApplicationRecord
   def followed_by?(user)
     passive_relationships.find_by(following_id: user.id).present?
   end
-  
+
   def self.search(search)
     return Post.includes(:user) unless search
+
     Post.where('content LIKE(?)', "%#{search}%")
   end
 
@@ -48,9 +49,7 @@ class Post < ApplicationRecord
       action: 'comment'
     )
     # 自分の投稿に対するコメントの場合は、通知済みとする
-    if notification.visiter_id == notification.visited_id
-      notification.checked = true
-    end
+    notification.checked = true if notification.visiter_id == notification.visited_id
     notification.save if notification.valid?
   end
 end

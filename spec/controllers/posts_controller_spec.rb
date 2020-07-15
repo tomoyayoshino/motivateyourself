@@ -28,7 +28,7 @@ describe PostsController, type: :controller do
     it "@postsの値を降順で確かめる" do
       posts = create_list(:post, 3)
       get :index
-      expect(assigns(:posts)).to match(posts.sort{ |a, b| b.created_at <=> a.created_at } )
+      expect(assigns(:posts)).to match(posts.sort { |a, b| b.created_at <=> a.created_at })
     end
     it "indexアクションで正しくビューに遷移すること" do
       get :index
@@ -48,5 +48,3 @@ describe PostsController, type: :controller do
     end
   end
 end
-
-

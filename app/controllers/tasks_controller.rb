@@ -28,7 +28,8 @@ class TasksController < ApplicationController
   end
 
   private
-  def target_task task_id
+
+  def target_task(task_id)
     current_user.tasks.where(id: task_id).take
   end
 

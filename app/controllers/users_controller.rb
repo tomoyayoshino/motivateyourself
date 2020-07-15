@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-    user = User.find(params[:id])
+    @user = User.find(params[:id])
   end
 
   def update
@@ -22,13 +22,13 @@ class UsersController < ApplicationController
     @posts = @user.posts.order("created_at DESC")
     @favorite_posts = @user.favorite_posts.order("created_at DESC")
     # DM機能
-    @currentUserEntry=Entry.where(user_id: current_user.id)
-    @userEntry=Entry.where(user_id: @user.id)
+    @currentUserEntry = Entry.where(user_id: current_user.id)
+    @userEntry = Entry.where(user_id: @user.id)
     if @user.id == current_user.id
     else
       @currentUserEntry.each do |cu|
         @userEntry.each do |u|
-          if cu.room_id == u.room_id then
+          if cu.room_id == u.room_id
             @isRoom = true
             @roomId = cu.room_id
           end

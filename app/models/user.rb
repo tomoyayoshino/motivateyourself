@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  validates :name, presence: true, uniqueness: {case_sensitive: true}, length: { maximum: 10 }
+  validates :name, presence: true, uniqueness: { case_sensitive: true }, length: { maximum: 10 }
   validates :image, presence: true
   validates :profile, length: { maximum: 200 }
 
@@ -28,7 +28,6 @@ class User < ApplicationRecord
 
   mount_uploader :image, ImageUploader
 
-
   def self.guest
     find_by(email: 'sample@user.com') do |user|
       user.password = motivateyourself
@@ -41,12 +40,13 @@ class User < ApplicationRecord
 
   def self.search(search)
     return User.all unless search
+
     User.where('profile LIKE(?)', "%#{search}%")
   end
 
-  #フォロー時の通知
+  # フォロー時の通知
   def create_notification_follow!(current_user)
-    temp = Notification.where(["visiter_id = ? and visited_id = ? and action = ? ",current_user.id, id, 'follow'])
+    temp = Notification.where(["visiter_id = ? and visited_id = ? and action = ? ", current_user.id, id, 'follow'])
     if temp.blank?
       notification = current_user.active_notifications.new(
         visited_id: id,
