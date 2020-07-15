@@ -19,9 +19,7 @@ class Room < ApplicationRecord
       action: 'message'
     )
 
-    if notification.visiter_id == notification.visited_id
-      notification.checked = true
-    end
+    notification.checked = true if notification.visiter_id == notification.visited_id
     notification.save if notification.valid?
   end
 end
