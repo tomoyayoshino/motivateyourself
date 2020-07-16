@@ -19,10 +19,14 @@
     .Profile__actionBar
       - if user_signed_in? && current_user.id == @user.id && @user.email != "sample@user.com"
         = link_to 'プロフィール編集', edit_user_registration_path(current_user)
+      -# DM機能
       - unless @user.id == current_user.id
+        -# 相互フォローの場合のみDM可能
         - if (current_user.followed_by? @user) && (@user.followed_by? current_user)
+          -# roomが既に存在する場合はチャット一覧へのリンク
           - if @isRoom == true
             = link_to 'チャットへ', "/rooms/#{@roomId}"
+          -# 無い場合は新しくルームを作成してからチャット一覧へ
           - else
             = form_with(model: @room, local: true)  do |f|
               = fields_for @entry do |e|

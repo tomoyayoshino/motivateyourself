@@ -22,10 +22,14 @@ class UsersController < ApplicationController
     @posts = @user.posts.order("created_at DESC")
     @favorite_posts = @user.favorite_posts.order("created_at DESC")
     # DM機能
+    # ログインしてるユーザー
     @currentUserEntry = Entry.where(user_id: current_user.id)
+    # DMしたい相手のユーザー
     @userEntry = Entry.where(user_id: @user.id)
     if @user.id == current_user.id
     else
+      # ログインしてるユーザーのエントリーしている部屋の中から、相手のユーザーもいる部屋を探す
+      # 一致する部屋がある場合、その部屋を表示させる
       @currentUserEntry.each do |cu|
         @userEntry.each do |u|
           if cu.room_id == u.room_id
@@ -34,6 +38,7 @@ class UsersController < ApplicationController
           end
         end
       end
+      # DMをするroomがない(初めての場合)
       unless @isRoom
         @room = Room.new
         @entry = Entry.new
