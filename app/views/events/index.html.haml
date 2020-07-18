@@ -1,0 +1,12 @@
+.EventIndex
+  = link_to "新しくイベントを開催する", new_event_path
+  - @events.each do |event|
+    .EventIndex__Box
+      = event.user.name
+      = event.title
+      = event.description
+      = event.place
+      = event.day
+      = event.start.strftime('%H:%M')
+      = event.end.strftime('%H:%M')
+      = link_to '詳細', event_path(event.id)
