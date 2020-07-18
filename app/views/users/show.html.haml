@@ -24,9 +24,8 @@
         -# 相互フォローの場合のみDM可能
         - if (current_user.followed_by? @user) && (@user.followed_by? current_user)
           -# roomが既に存在する場合はチャット一覧へのリンク
-          - if @isRoom == true
+          - if @isRoom
             = link_to 'チャットへ', "/rooms/#{@roomId}"
-          -# 無い場合は新しくルームを作成してからチャット一覧へ
           - else
             = form_with(model: @room, local: true)  do |f|
               = fields_for @entry do |e|
