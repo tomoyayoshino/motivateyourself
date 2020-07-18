@@ -22,13 +22,16 @@
       = link_to notifications_path, class: "SideBar__list" do
         = icon('fas', 'bell')
         Notice
+    = link_to  events_path, class:"SideBar__list" do
+      = icon('fas', 'calendar-alt')
+      Events
     = link_to  users_path, class:"SideBar__list" do
       = icon('fas', 'users')
       Users
     = link_to destroy_user_session_path, method: :delete, class:"SideBar__list" do
       = icon('fas', 'sign-out-alt')
       Logout
-  - else 
+  - else
     = link_to new_user_session_path, class:"SideBar__list" do
       = icon('fas', 'sign-in-alt')
       ログイン
