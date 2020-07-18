@@ -5,6 +5,7 @@
       .UserInfo__nameBox--name
         = current_user.name
   = form_with(model: @post, local: true, class: "PostForm") do |f|
+    = render 'layouts/error_messages', model: f.object
     = f.label :content, "投稿内容を入力"
     = f.text_area :content, placeholder: "type a text", class: "PostForm__textarea"
     = f.label :tag_list, "ハッシュタグ 例: Ruby,Rails,JavaScript"
@@ -15,4 +16,5 @@
         = icon('far', 'image', class: 'imageIcon')
         = f.file_field :image, class: 'Hidden'
       = f.submit '投稿', class: 'PostForm__submit'
+
 = render "layouts/rightbar"
