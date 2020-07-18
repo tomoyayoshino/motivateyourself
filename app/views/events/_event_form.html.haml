@@ -1,5 +1,6 @@
 .EventForm
   = form_with(model: @event, local: true) do |f|
+    = render 'layouts/error_messages', model: f.object
     = f.text_field :title, placeholder: "イベントタイトルを入力"
     %br
     = f.text_area :description, placeholder: "イベントの説明を入力"

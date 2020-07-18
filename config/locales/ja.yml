@@ -9,9 +9,17 @@ ja:
           has_many: "%{record}が存在しているので削除できません"
     models:
       post: 投稿
+      event: イベント
     attributes:
       post:
         content: 投稿メッセージ
+      event:
+        title: イベントタイトル
+        description: イベントの説明
+        place: 開催場所
+        day: 開催日
+        start: 開始予定時刻
+        end: 終了予定時刻
   date:
     abbr_day_names:
     - 日
