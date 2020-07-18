@@ -25,8 +25,7 @@ class EventsController < ApplicationController
     redirect_to events_path
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     event = Event.find(params[:id])
@@ -34,8 +33,7 @@ class EventsController < ApplicationController
     redirect_to events_path
   end
 
-  def show
-  end
+  def show; end
 
   private
 
