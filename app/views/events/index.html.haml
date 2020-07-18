@@ -9,5 +9,6 @@
       = event.day
       = event.start.strftime('%H:%M')
       = event.end.strftime('%H:%M')
+      = link_to '詳細', event_path(event.id)
       = link_to '編集', edit_event_path(event.id)
       = link_to '削除', event_path(event.id), method: :delete
