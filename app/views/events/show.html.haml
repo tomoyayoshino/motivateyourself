@@ -13,9 +13,9 @@
   - if current_user.id == @event.user_id
     = link_to '編集', edit_event_path(@event.id)
     = link_to '削除', event_path(@event.id), method: :delete
+    %span 自分以外の参加者数:
+    = @event.participations.count
   - else
     %div{class: "EventShow__participation--#{@event.id}"}
       = render partial: 'events/participate', locals: { event: @event }
 
-    -# %div{class: "ContentBox__actionBar--favorite--#{@post.id}"}
-    -#   = render partial: "posts/favorite", locals: { post: @post }
