@@ -1,4 +1,5 @@
 .EventIndex
+  = link_to "新しくイベントを開催する", new_event_path
   - @events.each do |event|
     .EventIndex__Box
       = event.user.name
