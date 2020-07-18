@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'posts#index'
   get '/about', to: 'staticpages#about'
   get '/help', to: 'staticpages#help'
+
   resources :tasks
 
   resources :posts do
@@ -27,7 +28,9 @@ Rails.application.routes.draw do
 
   resources :messages, only: :create
   resources :rooms, only: [:create, :show, :index]
+
   resources :notifications, only: :index
+
   resources :events do
     resource :participations, only: [:create, :destroy]
   end
