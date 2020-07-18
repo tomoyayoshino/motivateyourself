@@ -1,16 +1,2 @@
 .NewEvent
-  .EventForm
-    = form_with(model: @event, local: true) do |f|
-      = f.text_field :title, placeholder: "イベントタイトルを入力"
-      %br
-      = f.text_area :description, placeholder: "イベントの説明を入力"
-      %br
-      = f.text_field :place, placeholder: "開催場所を入力"
-      %br
-      = f.date_field :day
-      %br
-      = f.time_field :start
-      %br
-      = f.time_field :end
-      %br
-      = f.submit '投稿'
+  = render "event_form"

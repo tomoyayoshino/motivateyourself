@@ -37,14 +37,6 @@ class EventsController < ApplicationController
   def show
   end
 
-  # def search
-  #   @posts = Post.search(params[:keyword]).order("created_at DESC").limit(255)
-  #   respond_to do |format|
-  #     format.html
-  #     format.json
-  #   end
-  # end
-
   private
 
   def event_params
