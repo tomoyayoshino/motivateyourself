@@ -33,7 +33,9 @@ class EventsController < ApplicationController
     redirect_to events_path
   end
 
-  def show; end
+  def show
+    @participation_users = @event.participation_users
+  end
 
   private
 

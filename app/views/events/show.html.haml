@@ -6,8 +6,15 @@
   = @event.day
   = @event.start.strftime('%H:%M')
   = @event.end.strftime('%H:%M')
+
+  - @participation_users.each do |user|
+    = user.name
+
   - if current_user.id == @event.user_id
     = link_to '編集', edit_event_path(@event.id)
     = link_to '削除', event_path(@event.id), method: :delete
   - else
-    = link_to '参加する', '#'
+    - if @event.participated_by?(current_user)
+      = link_to '参加を取り消す', event_participations_path(@event.id), method: :delete
+    - else
+      = link_to '参加する', event_participations_path(@event.id), method: :post
