@@ -9,3 +9,4 @@
       = event.day
       = event.start.strftime('%H:%M')
       = event.end.strftime('%H:%M')
+      = link_to '削除', event_path(event.id), method: :delete
