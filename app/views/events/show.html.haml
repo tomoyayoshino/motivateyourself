@@ -14,7 +14,8 @@
     = link_to '編集', edit_event_path(@event.id)
     = link_to '削除', event_path(@event.id), method: :delete
   - else
-    - if @event.participated_by?(current_user)
-      = link_to '参加を取り消す', event_participations_path(@event.id), method: :delete
-    - else
-      = link_to '参加する', event_participations_path(@event.id), method: :post
+    %div{class: "EventShow__participation--#{@event.id}"}
+      = render partial: 'events/participate', locals: { event: @event }
+
+    -# %div{class: "ContentBox__actionBar--favorite--#{@post.id}"}
+    -#   = render partial: "posts/favorite", locals: { post: @post }

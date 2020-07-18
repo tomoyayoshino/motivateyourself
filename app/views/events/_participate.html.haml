@@ -1,0 +1,6 @@
+- if @event.participated_by?(current_user)
+  = link_to '参加を取り消す', event_participations_path(@event.id), method: :delete, remote: true
+- else
+  = link_to '参加する', event_participations_path(@event.id), method: :post, remote: true
+%span 参加者数:
+= @event.participations.count + 1
