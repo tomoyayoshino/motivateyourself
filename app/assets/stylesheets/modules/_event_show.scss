@@ -4,6 +4,12 @@
   height: 100vh;
   overflow: scroll;
   padding: 16px 160px;
+  &__indexlink {
+    display: flex;
+    justify-content: flex-end;
+    color: blue;
+    margin-top: 8px;
+  }
   &__info {
     border: 2px solid black;
     background: lightgray;

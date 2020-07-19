@@ -37,4 +37,5 @@
           =link_to user_path(user.id), class:"EventShow__participation__users__box__user" do
             %span.EventShow__participation__users__box__user--icon= image_tag user.image.url, size: '20x20'
             %span.EventShow__participation__users__box__user--name= user.name
+  = link_to 'イベント一覧へ戻る', events_path, class: "EventShow__indexlink"
 
