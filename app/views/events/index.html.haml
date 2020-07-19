@@ -5,9 +5,8 @@
       %span.EventIndex__header__new 新しくイベントを開催する
   .EventIndex__main
     .EventIndex__main__header
-      %p#EventsTabBtn イベント一覧
-      %p#RecentEventsTabBtn 参加イベント
-    .EventIndex__main__contents
+      %p#EventsTabBtn.eventShowTabs.active イベント一覧
+    .EventIndex__main__contents.EventTabs.show
       - @events.each do |event|
         .EventBox
           .EventBox__left
