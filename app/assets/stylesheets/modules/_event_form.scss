@@ -1,0 +1,20 @@
+.EventForm{
+  height: 100vh;
+  overflow: scroll;
+  margin: 0 auto;
+  padding: 16px 0;
+  text-align: center;
+  width: 60vw;
+  background: whitesmoke;
+  &__form {
+    width: 600px;
+    margin-bottom: 8px;
+    &__description {
+      height: 120px;
+    }
+  }
+  &__date {
+    margin: 16px 0;
+  }
+}
+

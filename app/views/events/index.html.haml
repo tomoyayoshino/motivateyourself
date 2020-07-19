@@ -1,12 +1,27 @@
 .EventIndex
-  = link_to "新しくイベントを開催する", new_event_path
-  - @events.each do |event|
-    .EventIndex__Box
-      = event.user.name
-      = event.title
-      = event.description
-      = event.place
-      = event.day
-      = event.start.strftime('%H:%M')
-      = event.end.strftime('%H:%M')
-      = link_to '詳細', event_path(event.id)
+  .EventIndex__header
+    %span.EventIndex__header__info イベントページへようこそ！交流の輪を広めましょう！
+    = link_to new_event_path do
+      %span.EventIndex__header__new 新しくイベントを開催する
+  .EventIndex__main
+    .EventIndex__main__header
+      %p#EventsTabBtn.eventShowTabs.active イベント一覧
+    .EventIndex__main__contents.EventTabs.show
+      - @events.each do |event|
+        .EventBox
+          .EventBox__left
+            = image_tag event.user.image.url, size: '40x40', class: "EventBox__left--icon"
+          .EventBox__right
+            .EventBox__right__date
+              = event.day
+              = event.start.strftime('%H:%M')
+              〜
+              = event.end.strftime('%H:%M')
+            .EventBox__right__title
+              = link_to event_path(event.id) do
+                %span.EventBox__right__title--title= event.title
+              in
+              = event.place
+            .EventBox__right__host
+              主催者：
+              %span= event.user.name

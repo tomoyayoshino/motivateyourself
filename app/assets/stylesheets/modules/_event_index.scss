@@ -1,0 +1,63 @@
+.EventIndex {
+  width: calc(100vw - 200px);
+  min-width: 780px;
+  height: 100vh;
+  padding: 8px 40px;
+  &__header {
+    padding: 8px 16px;
+    background: whitesmoke;
+    text-align: center;
+    &__info{
+      font-weight: bold;
+    }
+    &__new{
+      padding: 8px 16px;
+      color: white;
+      font-weight: bold;
+      text-shadow: 0 0 2px rgba(0,0,0,0.7);
+      background-color: darkgray;
+      border: 1px solid black;
+      border-radius: 5px;
+    }
+  }
+  &__main {
+    &__header{
+      display: flex;
+      justify-content: space-around;
+      border: 1px solid black;
+      margin: 8px 0;
+    }
+    &__contents{
+      height: calc(100vh - 92px);
+      overflow: scroll;
+      .EventBox {
+        display: flex;
+        border-bottom: 1px solid lightgray;
+        padding: 8px;
+        &__left {
+          margin: auto 16px;
+        }
+        &__right{
+          width: 100%;
+          padding: 8px;
+          &__date{
+
+          }
+          &__title{
+            font-size: 20px;
+            :hover{
+              color: lightcoral;
+              font-weight: bold;
+            }
+            a {
+              color: blue;
+            }
+          }
+          &__host{
+
+          }
+        }
+      }
+    }
+  }
+}
