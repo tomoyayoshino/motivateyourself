@@ -74,6 +74,7 @@ gem "haml-rails", ">= 1.0", '<= 2.0.1'
 gem 'jquery-rails'
 gem 'mini_magick'
 gem 'pry-rails'
+gem 'sprockets-es6'
 
 group :production do
   gem 'unicorn', '5.4.1'
