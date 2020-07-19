@@ -1,16 +1,23 @@
 .EventForm
-  = form_with(model: @event, local: true) do |f|
+  = form_with(model: @event, class: "EventForm--form",local: true) do |f|
     = render 'layouts/error_messages', model: f.object
+    %p タイトル
     = f.text_field :title, placeholder: "イベントタイトルを入力"
     %br
+    %p 詳細
     = f.text_area :description, placeholder: "イベントの説明を入力"
     %br
+    %p 場所
     = f.text_field :place, placeholder: "開催場所を入力"
     %br
+    %p 開催日
     = f.date_field :day
     %br
-    = f.time_field :start
+    .starttime
+      開始時刻
+      = f.time_field :start
+    .endtime
+      終了時刻
+      = f.time_field :end
     %br
-    = f.time_field :end
-    %br
-    = f.submit '投稿'
+    = f.submit 'イベントを投稿する'
