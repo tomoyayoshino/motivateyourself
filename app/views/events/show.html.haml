@@ -1,4 +1,5 @@
 .EventShow
+  = image_tag @event.user.image.url, size: '32x32'
   = @event.user.name
   = @event.title
   = @event.description
@@ -18,4 +19,3 @@
   - else
     %div{class: "EventShow__participation--#{@event.id}"}
       = render partial: 'events/participate', locals: { event: @event }
-
