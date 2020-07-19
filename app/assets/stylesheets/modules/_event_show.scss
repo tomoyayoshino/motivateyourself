@@ -1,0 +1,106 @@
+.EventShow {
+  width: calc(100vw - 200px);
+  min-width: 740px;
+  height: 100vh;
+  overflow: scroll;
+  padding: 16px 160px;
+  &__info {
+    border: 2px solid black;
+    background: lightgray;
+    padding: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    &__box {
+      display: flex;
+      &--day {
+        margin-right: 16px;
+      }
+      &--time{
+      }
+    }
+    &__title{
+    }
+  }
+  &__host {
+    outline: 1px solid lightgray;
+    padding: 8px 24px;
+    display: flex;
+    &__icon {
+      height: 40px;
+      width: 40px;
+    }
+    &__name {
+      font-size: 24px;
+      margin-left: 8px;
+      color: blue;
+    }
+  }
+  &__detail {
+    padding: 8px 24px;
+    outline: 1px solid lightgray;
+    &__header {
+      padding: 8px 16px;
+      background: darkgray;
+      font-weight: bold;
+      color: white;
+      text-shadow: 0 0 2px rgba(0,0,0,0.8);
+    }
+    &__description{
+      margin-top: 8px;
+      padding: 0 4px;
+      white-space: pre-wrap;
+    }
+  }
+  &__place {
+    padding: 8px 24px;
+    outline: 1px solid lightgray;
+    &__header {
+      padding: 8px 16px;
+      background: darkgray;
+      font-weight: bold;
+      color: white;
+      text-shadow: 0 0 2px rgba(0,0,0,0.8);
+    }
+    &__name {
+      margin-top: 8px;
+      padding: 0 4px;
+    }
+  }
+  &__participation {
+    padding: 8px 24px;
+    outline: 1px solid lightgray;
+    &__users {
+      &__box{
+        &__user {
+          display: flex;
+          &--name {
+            margin-left: 8px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.UnParticipateBtn{
+  padding: 8px 24px;
+  background: red;
+  color: white;
+  text-shadow: 0 0 1px rgba(0,0,0,1);
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.ParticipateBtn{
+  padding: 8px 24px;
+  background: blue;
+  color: white;
+  text-shadow: 0 0 1px rgba(0,0,0,1);
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.ParticipateCount{
+  margin-top: 8px;
+}

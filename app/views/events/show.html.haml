@@ -1,21 +1,40 @@
 .EventShow
-  = image_tag @event.user.image.url, size: '32x32'
-  = @event.user.name
-  = @event.title
-  = @event.description
-  = @event.place
-  = @event.day
-  = @event.start.strftime('%H:%M')
-  = @event.end.strftime('%H:%M')
+  .EventShow__info
+    .EventShow__info__box
+      .EventShow__info__box--day
+        = @event.day
+      .EventShow__info__box--time
+        = @event.start.strftime('%H:%M')
+        〜
+        = @event.end.strftime('%H:%M')
+    .EventShow__info__title
+      = @event.title
+  .EventShow__host
+    = image_tag @event.user.image.url, class: "EventShow__host__icon"
+    = link_to user_path(@event.user.id) do
+      %span.EventShow__host__name= @event.user.name
+  .EventShow__detail
+    %span.EventShow__detail__header 詳細
+    %p.EventShow__detail__description= @event.description
+  .EventShow__place
+    %span.EventShow__place__header 場所
+    %p.EventShow__place__name= @event.place
+  .EventShow__participation
+    - if current_user.id == @event.user_id
+      = link_to '編集', edit_event_path(@event.id)
+      = link_to '削除', event_path(@event.id), method: :delete
+      %div
+        自分以外の参加者数:
+        %span= @event.participations.count
+    - else
+      %div{class: "EventShow__participation--#{@event.id}"}
+        = render partial: 'events/participate', locals: { event: @event }
+    .EventShow__participation__users
+      = image_tag @event.user.image.url, size: '20x20'
+      = @event.user.name
+      - @participation_users.each do |user|
+        .EventShow__participation__users__box
+          =link_to user_path(user.id), class:"EventShow__participation__users__box__user" do
+            %span.EventShow__participation__users__box__user--icon= image_tag user.image.url, size: '20x20'
+            %span.EventShow__participation__users__box__user--name= user.name
 
-  - @participation_users.each do |user|
-    = user.name
-
-  - if current_user.id == @event.user_id
-    = link_to '編集', edit_event_path(@event.id)
-    = link_to '削除', event_path(@event.id), method: :delete
-    %span 自分以外の参加者数:
-    = @event.participations.count
-  - else
-    %div{class: "EventShow__participation--#{@event.id}"}
-      = render partial: 'events/participate', locals: { event: @event }
