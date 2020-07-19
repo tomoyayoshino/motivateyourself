@@ -9,6 +9,9 @@
     %br
     %p 場所
     = f.text_field :place, placeholder: "開催場所を入力", class: "EventForm__form"
+    %br
+    %p 住所
+    = f.text_field :address, placeholder: "開催場所の住所を入力", class: "EventForm__form"
     .EventForm__date
       開催日
       = f.date_field :day
