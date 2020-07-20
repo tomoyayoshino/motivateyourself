@@ -35,6 +35,7 @@ DM機能、
 - AWS,EC2,S3
 - Capistoranoを用いた自動デプロイ
 - データベース：MySQL (MariaDB)
+- Google Maps API(実装途中)
 ## 使用言語
 - Ruby '2.6.5'
 - Rails '6.0.3'
