@@ -39,3 +39,4 @@ public/uploads/*
 .DS_Store
 .rubocop.yml
 .rubocop_todo.yml
+/.env

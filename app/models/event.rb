@@ -10,6 +10,9 @@ class Event < ApplicationRecord
   has_many :participations
   has_many :participation_users, through: :participations, source: :user
 
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
+
   def participated_by?(user)
     participations.where(user_id: user.id).exists?
   end
