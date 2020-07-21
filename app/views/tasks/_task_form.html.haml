@@ -1,12 +1,11 @@
 .TaskForm
   .TaskForm__main
     = form_with(model: @task, local: true) do |f|
-      %div
-        %p= f.label :title, 'タスク名'
-        = f.text_field :title, size: 50
-      %div
+      .TaskForm__main__forms
+        %p= f.label :title, 'タスク'
+        = f.text_field :title, class: "TaskForm__main__form"
+        %br
         %p= f.label :description, '詳細'
-        = f.text_area :description
-      = f.submit '送信'
+        = f.text_area :description, class: "TaskForm__main__form"
+        = f.submit 'タスクを送信する', class: "TaskForm__main__submit"
     .TaskMotivate
-      

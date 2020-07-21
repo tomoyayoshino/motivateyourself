@@ -1,13 +1,12 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, except: :new_guest
+  before_action :set_user, only: [:edit, :show, :follows, :followers]
 
   def index
     @users = User.all
   end
 
-  def edit
-    @user = User.find(params[:id])
-  end
+  def edit; end
 
   def update
     if current_user.update(user_params)
@@ -18,7 +17,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
     @posts = @user.posts.order("created_at DESC")
     @favorite_posts = @user.favorite_posts.order("created_at DESC")
     # DM機能
@@ -47,13 +45,11 @@ class UsersController < ApplicationController
   end
 
   def follows
-    user = User.find(params[:id])
-    @users = user.followings
+    @users = @user.followings
   end
 
   def followers
-    user = User.find(params[:id])
-    @users = user.followers
+    @users = @user.followers
   end
 
   def search
@@ -74,5 +70,9 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :email, :image)
+  end
+
+  def set_user
+    @user = User.find(params[:id])
   end
 end

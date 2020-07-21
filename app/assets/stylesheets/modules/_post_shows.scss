@@ -67,9 +67,14 @@
     }
     &__index{
       margin-left: 5px;
-      height: calc(100vh - 146px);
+      height: calc(100vh - 204px);
       overflow: scroll;
-      &--header{}
+      &--header{
+        h4 {
+          margin: 8px;
+          font-size: 18px;
+        }
+      }
       &__box {
         display: flex;
       }

@@ -4,7 +4,7 @@
       .PostBox__info--icon
         = image_tag @post.user.image.url, size: '50x50'
       .PostBox__info--name
-        =link_to "#{@post.user.name}", "/users/#{@post.user.id}"
+        =link_to @post.user.name, user_path(@post.user.id)
       .PostBox__info--follow
     .PostBox__contents
       .PostBox__contents--text
@@ -23,7 +23,7 @@
         = render partial: "posts/favorite", locals: { post: @post }
       - if user_signed_in? && current_user.id == @post.user_id
         .Postshow__fav
-          = icon('fas', 'star', class: 'unFavoriteIcon')
+          = icon('fas', 'star')
           = @post.favorites.count
         = link_to '編集', edit_post_path(@post.id), method: :get, class: "PostBox__actionBar--edit"
         = link_to '削除', post_path(@post.id), method: :delete, class: "PostBox__actionBar--delete"
@@ -33,19 +33,15 @@
     .CommentContents__header
       %p コメント
     .CommentContents__form
-      - if current_user
-        = form_with(model: [@post, @comment], local: true, id: "new_comment") do |form|
-          = form.text_area :text, placeholder: "コメントする", rows: "2" , class: "CommentContents__form--text"
-          = form.submit "SEND", class: "CommentContents__form--submit"
-      - else
-        %strong
-          %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
+      = form_with(model: [@post, @comment], local: true, id: "new_comment") do |form|
+        = form.text_area :text, placeholder: "コメントを入力", rows: "2" , class: "CommentContents__form--text"
+        = form.submit "コメントを投稿", class: "CommentContents__form--submit"
     .CommentContents__index--header
       %h4 ＜コメント一覧＞
     - if @comments
       .CommentContents__index
         - @comments.each do |comment|
           .CommentContents__index__box
-            = link_to comment.user.name, "/users/#{comment.user_id}", class: ".CommentContents__index__box--name"
+            = link_to comment.user.name, user_path(comment.user_id), class: ".CommentContents__index__box--name"
             ：
             .CommentContents__index__box--text= text_url_to_link(h(comment.text)).html_safe

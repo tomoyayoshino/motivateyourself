@@ -26,6 +26,7 @@
       justify-content: space-around;
       border: 1px solid black;
       margin: 8px 0;
+      cursor: pointer;
     }
     &__contents{
       height: calc(100vh - 92px);
@@ -54,7 +55,6 @@
             }
           }
           &__host{
-
           }
         }
       }

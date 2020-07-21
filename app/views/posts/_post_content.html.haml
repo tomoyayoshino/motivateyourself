@@ -21,7 +21,7 @@
       = post.created_at.strftime("%Y-%m-%d %H:%M:%S")
     - if user_signed_in? && current_user.id == post.user_id
       .Postshow__fav
-        = icon('fas', 'star', class: 'FavoriteIcon')
+        = icon('fas', 'star')
         = post.favorites.count
       .ContentBox__actionBar--edit
         = link_to '編集', edit_post_path(post.id), method: :get
