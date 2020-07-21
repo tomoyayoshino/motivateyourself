@@ -22,6 +22,7 @@
   - if @event.address.present?
     .EventShow__place
       %span.EventShow__place__header 住所
+      実装途中です
       %p.EventShow__place__name= @event.address
       = render partial: 'events/map', locals: { event: @event }
       #map
