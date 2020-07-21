@@ -67,6 +67,15 @@
   &__main{
     @include timeline_size;
     padding: 1px 5px;
+    &__forms{
+      margin: 8px 16px;
+    }
+    &__form{
+      width: 80%;
+    }
+    &__submit{
+      margin-top: 4px;
+    }
   }
 }
 
