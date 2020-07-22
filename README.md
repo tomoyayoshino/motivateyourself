@@ -38,7 +38,7 @@
 トップページにアクセスし、"ゲストでログイン"ボタンからログイン可能です
 
 # データベース設計(ER図)
-<img width="728" alt="スクリーンショット 2020-07-22 19 27 12" src="https://user-images.githubusercontent.com/65991651/88165992-7ffe2200-cc51-11ea-83f2-4b5443ae26a1.png">
+<img width="728" alt="スクリーンショット 2020-07-22 20 49 01" src="https://user-images.githubusercontent.com/65991651/88173010-d9b81980-cc5c-11ea-9620-1f518d36476c.png">
 
 # 制作意図
 自分がプログラミング学習をはじめた頃、中々成長している実感が得られず挫折しそうになっていました。<br>
