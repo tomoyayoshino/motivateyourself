@@ -1,0 +1,12 @@
+.UserEventIndex
+  .UserEventIndex__header
+    #UserEventTitle 参加予定のイベント
+  .UserEventContent
+    - current_user.participation_events.each do |event|
+      .UserEventBox
+        =link_to event_path(event.id) do
+          .UserEventTitle= event.title
+        .UserEventShow
+          = event.day
+          主催:
+          = event.user.name
