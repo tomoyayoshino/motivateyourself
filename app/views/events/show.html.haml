@@ -23,8 +23,8 @@
     .EventShow__place
       %span.EventShow__place__header 住所
       %p.EventShow__place__name= @event.address
-      = render partial: 'events/map', locals: { event: @event }
-      #map
+      -# = render partial: 'events/map', locals: { event: @event }
+      -# #map
 
   .EventShow__participation
     - if current_user.id == @event.user_id
