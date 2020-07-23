@@ -34,8 +34,13 @@
         自分以外の参加者数:
         %span= @event.participations.count
     - else
-      %div{class: "EventShow__participation--#{@event.id}"}
-        = render partial: 'events/participate', locals: { event: @event }
+      - if @event.participated_by?(current_user)
+        = link_to '参加を取り消す', event_participations_path(@event.id), class: "UnParticipateBtn", method: :delete
+      - else
+        = link_to '参加する', event_participations_path(@event.id), class: "ParticipateBtn",method: :post
+      %div.ParticipateCount
+        %span 参加者数:
+        = @event.participations.count + 1
     .EventShow__participation__users
       = image_tag @event.user.image.url, size: '20x20'
       = @event.user.name
