@@ -3,4 +3,6 @@ class StaticpagesController < ApplicationController
   def about; end
 
   def help; end
+
+  def timer; end
 end

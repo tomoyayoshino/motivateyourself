@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'posts#index'
   get '/about', to: 'staticpages#about'
   get '/help', to: 'staticpages#help'
+  get '/timer', to: 'staticpages#timer'
 
   resources :tasks
 
