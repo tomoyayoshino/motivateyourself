@@ -1,6 +1,6 @@
 .TaskIndex{
   width: 400px;
-  height: 60vh;
+  height: 50vh;
   padding: 1px 5px;
   &__header {
     display: flex;
@@ -34,7 +34,7 @@
   margin: 1px 0;
   outline: 1px solid black;
   background-color: lightgray;
-  height: calc(60vh - 54px);
+  height: calc(50vh - 54px);
   overflow: scroll;
   .TaskBox {
     padding: 5px 10px;
