@@ -40,6 +40,7 @@
 トップページにアクセスし、"ゲストでログイン"ボタンからログイン可能です
 
 # 使い方、デモムービー
+### 以下の動画でほぼ一通りの機能を実演しております。<br>
 [![](http://img.youtube.com/vi/uYqz8nRgsdo/0.jpg)](http://www.youtube.com/watch?v=uYqz8nRgsdo "")
 
 # データベース設計(ER図)
