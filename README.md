@@ -39,6 +39,9 @@
 [こちらのリンクからアクセスお願いします](http://18.181.137.18/) <br>
 トップページにアクセスし、"ゲストでログイン"ボタンからログイン可能です
 
+# 使い方、デモムービー
+[![](http://img.youtube.com/vi/uYqz8nRgsdo/0.jpg)](http://www.youtube.com/watch?v=uYqz8nRgsdo "")
+
 # データベース設計(ER図)
 <img width="712" alt="スクリーンショット 2020-07-22 21 06 27" src="https://user-images.githubusercontent.com/65991651/88174455-492f0880-cc5f-11ea-886a-577c30ecc1d4.png">
 
