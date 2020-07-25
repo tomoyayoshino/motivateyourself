@@ -31,7 +31,7 @@
       = link_to '編集', edit_event_path(@event.id)
       = link_to '削除', event_path(@event.id), method: :delete
       %div
-        自分以外の参加者数:
+        あなた以外の参加者数:
         %span= @event.participations.count
     - else
       - if @event.participated_by?(current_user)
