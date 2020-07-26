@@ -32,9 +32,8 @@
                 = e.hidden_field :user_id, value: @user.id
               = f.submit "チャットを始める"
         - else
-          .Profile__actionBar__info
-            = icon('fas', 'question-circle')
-            DMとは
+          %span.Profile__actionBar__info ※相互フォローのみDMが可能です
+
       .Profile__actionBar--following
         = @user.followings.count
         = link_to "Following", follows_user_path(@user.id), class:"Profile__actionBar--follow"

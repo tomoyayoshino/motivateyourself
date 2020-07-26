@@ -1,5 +1,5 @@
 $(function(){
-  
+
   function tabFavorite() {
     $("#userPostButton").removeClass("active");
     $("#userFavoriteButton").addClass("active");
@@ -21,4 +21,7 @@ $(function(){
     $('.UserTimeline').animate({scrollTop:0});
     $('.Timeline__main').animate({scrollTop:0});
   })
+
+  // DM関係
+
 });
