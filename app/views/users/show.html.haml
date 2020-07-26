@@ -25,12 +25,16 @@
         - if (current_user.followed_by? @user) && (@user.followed_by? current_user)
           -# roomが既に存在する場合はチャット一覧へのリンク
           - if @isRoom
-            = link_to 'チャットへ', "/rooms/#{@roomId}"
+            = link_to 'チャットへ', room_path(@roomId)
           - else
             = form_with(model: @room, local: true)  do |f|
               = fields_for @entry do |e|
                 = e.hidden_field :user_id, value: @user.id
               = f.submit "チャットを始める"
+        - else
+          .Profile__actionBar__info
+            = icon('fas', 'question-circle')
+            DMとは
       .Profile__actionBar--following
         = @user.followings.count
         = link_to "Following", follows_user_path(@user.id), class:"Profile__actionBar--follow"

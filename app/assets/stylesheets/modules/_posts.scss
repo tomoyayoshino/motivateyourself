@@ -47,6 +47,11 @@
         &--date{
           font-size: 12px;
         }
+        &--name {
+          &:hover {
+            text-decoration: underline;
+          }
+        }
       }
       &__contents{
         margin-bottom: 5px;
