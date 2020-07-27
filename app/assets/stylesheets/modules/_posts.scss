@@ -4,7 +4,7 @@
 
 @mixin timeline_size {
   width: calc(100vw - 200px - 400px);
-  min-width: 580px;
+  min-width: 600px;
 }
 
 @mixin  timeline_format {
