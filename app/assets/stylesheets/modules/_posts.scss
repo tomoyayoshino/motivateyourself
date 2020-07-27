@@ -48,6 +48,10 @@
           font-size: 12px;
         }
         &--name {
+          a{
+            color: black;
+            font-weight: bold;
+          }
           &:hover {
             text-decoration: underline;
           }
@@ -89,9 +93,22 @@
       &__actionBar{
         display: flex;
         justify-content: space-around;
+        a{
+          color: blue;
+        }
+        &--edit:hover{
+          a{
+            text-decoration: underline;
+            font-weight: bold;
+          }
+        }
         &--detail {
           &--icon {
             color: black;
+            &:hover{
+              color: #eee;
+              text-shadow: 0 0 3px rgba(0,0,0,0.7);
+            }
           }
         }
       }

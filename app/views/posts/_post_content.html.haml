@@ -26,8 +26,8 @@
         = post.favorites.count
       .ContentBox__actionBar--edit
         = link_to '編集', edit_post_path(post.id), method: :get
-      .ContentBox__actionBar--detail
-      = link_to '詳細', post_path(post.id), method: :get
+      .ContentBox__actionBar--edit
+        = link_to '詳細', post_path(post.id), method: :get
     - else
       %div{class: "ContentBox__actionBar--favorite--#{post.id}"}
         = render partial: "posts/favorite", locals: { post: post }
