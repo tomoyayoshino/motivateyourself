@@ -1,9 +1,10 @@
 .ContentBox
   .ContentBox__info
     .ContentBox__info--image
-      = image_tag post.user.image.url, size: '50x50'
+      =link_to user_path(post.user.id) do
+        = image_tag post.user.image.url, size: '50x50'
     .ContentBox__info--name
-      =link_to "#{post.user.name}", "/users/#{post.user.id}"
+      =link_to post.user.name, user_path(post.user.id)
     .ContentBox__info--follow
   .ContentBox__contents
     .ContentBox__contents--text
@@ -25,8 +26,8 @@
         = post.favorites.count
       .ContentBox__actionBar--edit
         = link_to '編集', edit_post_path(post.id), method: :get
-      .ContentBox__actionBar--detail
-      = link_to '詳細', post_path(post.id), method: :get
+      .ContentBox__actionBar--edit
+        = link_to '詳細', post_path(post.id), method: :get
     - else
       %div{class: "ContentBox__actionBar--favorite--#{post.id}"}
         = render partial: "posts/favorite", locals: { post: post }

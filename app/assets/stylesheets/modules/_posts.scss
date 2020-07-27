@@ -4,7 +4,7 @@
 
 @mixin timeline_size {
   width: calc(100vw - 200px - 400px);
-  min-width: 500px;
+  min-width: 600px;
 }
 
 @mixin  timeline_format {
@@ -47,6 +47,15 @@
         &--date{
           font-size: 12px;
         }
+        &--name {
+          a{
+            color: black;
+            font-weight: bold;
+          }
+          &:hover {
+            text-decoration: underline;
+          }
+        }
       }
       &__contents{
         margin-bottom: 5px;
@@ -68,12 +77,38 @@
           max-width: 480px;
         }
       }
+      &__tags {
+        &--tag{
+          border: 1px solid black;
+          color: black;
+          padding: 4px;
+          border-radius: 4px;
+          background: whitesmoke;
+          &:hover {
+            color: white;
+            background: gray;
+          }
+        }
+      }
       &__actionBar{
         display: flex;
         justify-content: space-around;
+        a{
+          color: blue;
+        }
+        &--edit:hover{
+          a{
+            text-decoration: underline;
+            font-weight: bold;
+          }
+        }
         &--detail {
           &--icon {
             color: black;
+            &:hover{
+              color: #eee;
+              text-shadow: 0 0 3px rgba(0,0,0,0.7);
+            }
           }
         }
       }
