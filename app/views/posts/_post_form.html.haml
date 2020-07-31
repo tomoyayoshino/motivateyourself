@@ -7,7 +7,7 @@
   = form_with(model: @post, local: true, class: "PostForm") do |f|
     = render 'layouts/error_messages', model: f.object
     = f.label :content, "投稿内容を入力"
-    = f.text_area :content, placeholder: "type a text", class: "PostForm__textarea"
+    = f.text_area :content, placeholder: "投稿を入力", class: "PostForm__textarea"
     = f.label :tag_list, "ハッシュタグ 例: Ruby,Rails,JavaScript"
     %br
     = f.text_field :tag_list, placeholder: "add tags split ','",value: @post.tag_list.join(','), class: "PostForm__tag"
