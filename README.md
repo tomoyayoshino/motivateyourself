@@ -61,7 +61,7 @@
 - 他の方からのフィードバックを参考に、リンクとなっている箇所を分かりやすいように修正した。
 
 # 技術一覧
-- AWS　EC2,S3,Route53
+- AWS　EC2,S3,VPC,Route53
 - Capistoranoを用いた自動デプロイ
 - データベース：MySQL (MariaDB)
 
