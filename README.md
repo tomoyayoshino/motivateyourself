@@ -62,8 +62,8 @@
 
 # 技術一覧
 - AWS　EC2,S3,VPC,Route53
-- Capistoranoを用いた自動デプロイ
-- データベース：MySQL
+- Capistorano
+-　MySQL
 
 ## 使用言語
 - Ruby '2.6.5'
