@@ -74,7 +74,7 @@
 - jQuery
 
 ## 使用gem
-### 開発
+### 開発関連
 - 'haml-rails'
 - 'font-awesome-sass'
 - 'carrierwave'
